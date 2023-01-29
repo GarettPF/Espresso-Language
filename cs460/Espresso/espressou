@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # change NONE to your username on java.cs.unlv.edu
-USER=NONE 
+USER=pascualf 
 
 SERVER=java.cs.unlv.edu
 da=`date | sed 's/ /_/g'`
