@@ -45,28 +45,55 @@ scan with {: return lexer.next_token(); :};
 // Note: The order here must be that of the names[] array in Token.java
 
 // Types
-terminal Token BYTE, CHAR, SHORT, INT, LONG; // integrals
-// YOUR CODE HERE
+terminal Token BYTE, CHAR, SHORT, INT, LONG;  								// integrals
+terminal Token FLOAT, DOUBLE;  												// decimals
+terminal Token BOOLEAN;  													// booleans
+terminal Token STRING;  													// strings
 
 // Keywords
-terminal Token BREAK; 		// break
-terminal Token CLASS; 		// class
-// YOUR CODE HERE
+terminal Token BREAK;  														// break
+terminal Token CLASS;  														// class
+terminal Token CONTINUE;													// continue
+terminal Token IF, ELSE;													// conditionals
+terminal Token WHILE, DO, FOR;												// loops
+terminal Token NEW, SUPER, THIS; 											// object keywords
+terminal Token VOID, RETURN;												// return keywords
 
 // Modifiers
-// YOUR CODE HERE
+terminal Token PUBLIC, PRIVATE, STATIC; 							// access modifiers
+terminal Token FINAL; 														// non-access modifiers
 
 // Literals and Identifiers
-// YOUR CODE HERE
+terminal Token BOOLEAN_LITERAL,
+               FLOAT_LITERAL,
+               DOUBLE_LITERAL,
+               IDENTIFIER,
+               INTEGER_LITERAL,
+               LONG_LITERAL,
+               NULL_LITERAL,
+               STRING_LITERAL,
+               CHARACTER_LITERAL;											// literals
 
 // Operators
-// YOUR CODE HERE
+terminal Token EQ 															// assignment op
+terminal Token LT, GT, LTEQ, GTEQ, EQEQ, NOTEQ, ANDAND, OROR; 				// comparisons ops
+terminal Token PLUSPLUS, MINUSMINUS, PLUS, MINUS, MULT, DIV, MOD; 			// mathematical ops
+terminal Token COMP, NOT; 													// inverts
+terminal Token AND, XOR, OR; 												// binary comparison ops
+terminal Token LSHIFT, RSHIFT, RRSHIFT; 									// binary shift ops
+terminal Token MULTEQ, DIVEQ, PLUSEQ, MINUSEQ, MODEQ, XOREQ,
+			   LSHIFTEQ, RSHIFTEQ, RRSHIFTEQ, ANDEQ, OREQ; 					// misc assignment ops
 
 // Misc
-// YOUR CODE HERE
+terminal Token SEMICOLON, COLON, COMMA, DOT;								// misc symbols
+terminal Token INSTANCEOF;													// instanceof
+terminal Token IMPORT;														// import
 
 // Brackets
 // YOUR CODE HERE
+terminal Token LBRACE, RBRACE, 												// []
+               LPAREN, RPAREN, 												// ()
+               LBRACK, RBRACK; 												// {}
 
 // -----------------------------------------------------------------------------
 // Non terminals

@@ -116,26 +116,100 @@ StringCharacter = {StringEscape}|[^\r\n\"\\]
 SingleCharacter = [^\r\n\'\\]
 StringEscape  =   \\([btnfr"'\\]|[0-3]?{OctDigit}?{OctDigit}|u{HexDigit}{HexDigit}{HexDigit}{HexDigit}) 
 
+/* Boolean Literals */
+BoolLiteral = {TrueLiteral} | {FalseLiteral}
+TrueLiteral = true
+FalseLiteral = false
+
 %%
   /* Keywords */
   "abstract"                     { return token(sym.ABSTRACT); }
   "boolean"                      { return token(sym.BOOLEAN); } 
   "break"                        { return token(sym.BREAK); }  
-  // YOUR CODE HERE  
+  "byte"                         { return token(sym.BYTE); }
+  "short"                        { return token(sym.SHORT); }
+  "int"                          { return token(sym.INT); }
+  "long"                         { return token(sym.LONG); }
+  "float"                        { return token(sym.FLOAT); }
+  "double"                       { return token(sym.DOUBLE); }
+  "char"                         { return token(sym.CHAR); }
+  "String"                       { return token(sym.STRING); }
+  "import"                       { return token(sym.IMPORT); }
+  "public"                       { return token(sym.PUBLIC); }
+  "private"                      { return token(sym.PRIVATE); }
+  "static"                       { return token(sym.STATIC); }
+  "final"                        { return token(sym.FINAL); }
+  "class"                        { return token(sym.CLASS); }
+  "extends"                      { return token(sym.EXTENDS); }
+  "void"                         { return token(sym.VOID); }
+  "super"                        { return token(sym.SUPER); }
+  "this"                         { return token(sym.THIS); }
+  "if"                           { return token(sym.IF); }
+  "else"                         { return token(sym.ELSE); }
+  "do"                           { return token(sym.DO); }
+  "while"                        { return token(sym.WHILE); }
+  "for"                          { return token(sym.FOR); }
+  "continue"                     { return token(sym.CONTINUE); }
+  "return"                       { return token(sym.RETURN); }
+  "new"                          { return token(sym.NEW); }
+  "instanceof"                   { return token(sym.INSTANCEOF); }
 
-  /* Boolean Literals */	   
-  // YOUR CODE HERE  	
+
 			   
   /* Null Literal */		   
   "null"                         { return token(sym.NULL_LITERAL); } 
   				     				   
   /* Separators */		   
   "("                            { return token(sym.LPAREN); } 
-  // YOUR CODE HERE
+  ")"                            { return token(sym.RPAREN); }
+  ";"                            { return token(sym.SEMICOLON); }
+  ":"                            { return token(sym.COLON); }
+  ","                            { return token(sym.COMMA); }
+  "."                            { return token(sym.DOT); }
+  "{"                            { return token(sym.LBRACE); }
+  "}"                            { return token(sym.RBRACE); }
+  "["                            { return token(sym.LBRACK); }
+  "]"                            { return token(sym.RBRACK); }
   				   
   /* Operators */		   
   "="                            { return token(sym.EQ); }  
-  // YOUR CODE HERE
+  "<"                            { return token(sym.LT); }
+  ">"                            { return token(sym.GT); }
+  "<="                           { return token(sym.LTEQ); }  
+  ">="                           { return token(sym.GTEQ); }  
+  "++"                           { return token(sym.PLUSPLUS); }  
+  "--"                           { return token(sym.MINUSMINUS); }  
+  "+"                            { return token(sym.PLUS); }
+  "-"                            { return token(sym.MINUS); }
+  "*"                            { return token(sym.MULT); }
+  "/"                            { return token(sym.DIV); }
+  "~"                            { return token(sym.COMP); }
+  "!"                            { return token(sym.NOT); }
+  "%"                            { return token(sym.MOD); }
+  "=="                           { return token(sym.EQEQ); }  
+  "!="                           { return token(sym.NOTEQ); }  
+  "&"                            { return token(sym.AND); }
+  "^"                            { return token(sym.XOR); }
+  "|"                            { return token(sym.OR); }
+  "&&"                           { return token(sym.ANDAND); }  
+  "||"                           { return token(sym.OROR); }  
+  "<<"                           { return token(sym.LSHIFT); }  
+  ">>"                           { return token(sym.RSHIFT); }  
+  ">>>"                          { return token(sym.RRSHIFT); }  
+  "*="                           { return token(sym.MULTEQ); }  
+  "/="                           { return token(sym.DIVEQ); }  
+  "+="                           { return token(sym.PLUSEQ); }  
+  "-="                           { return token(sym.MINUSEQ); }  
+  "%="                           { return token(sym.MODEQ); }  
+  "^="                           { return token(sym.XOREQ); }  
+  "<<="                          { return token(sym.LSHIFTEQ); }  
+  ">>="                          { return token(sym.RSHIFTEQ); }  
+  ">>>="                         { return token(sym.RRSHIFTEQ); }    
+  "&="                           { return token(sym.ANDEQ); }  
+  "|="                           { return token(sym.OREQ); }  
+  
+  /* Boolean Literals */	   
+  {BoolLiteral}                  { return token(sym.BOOLEAN_LITERAL); }
 
   /* Numeric literals */
 

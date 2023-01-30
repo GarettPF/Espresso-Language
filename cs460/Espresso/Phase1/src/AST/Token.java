@@ -22,28 +22,20 @@ public class Token {
         "BREAK",                
         "CLASS",                
         "CONTINUE",
-        "DO",      
-        "ELSE",    
-        "EXTENDS",
-        "FOR",    
         "IF",    
+        "ELSE",    
+        "WHILE",         
+        "DO",      
+        "FOR",    
         "NEW",   
-        "RETURN",  
         "SUPER",         
         "THIS",  
         "VOID",          
-        "WHILE",         
-        "CASE", 
-        "SWITCH",
-        "DEFAULT",
-        "IMPLEMENTS", 
-        "INTERFACE", 
-	    "IMPORT",
+        "RETURN",  
         "PUBLIC", 
         "PRIVATE", 
         "STATIC", 
         "FINAL", 
-        "ABSTRACT", 
         "BOOLEAN_LITERAL",
         "FLOAT_LITERAL",
         "DOUBLE_LITERAL",
@@ -58,26 +50,25 @@ public class Token {
         "GT",   
         "LTEQ",
         "GTEQ", 
+        "EQEQ",
+        "NOTEQ",        
+        "ANDAND",
+        "OROR", 
         "PLUSPLUS",     
         "MINUSMINUS",
         "PLUS",
         "MINUS",
         "MULT", 
         "DIV",  
+        "MOD",  
         "COMP",
         "NOT", 
-        "MOD",  
-        "EQEQ",
-        "NOTEQ",        
         "AND",
         "XOR",
         "OR",   
-        "ANDAND",
-        "OROR", 
         "LSHIFT",
         "RSHIFT",
         "RRSHIFT",      
-        "INSTANCEOF",   
         "MULTEQ",
         "DIVEQ",   
         "PLUSEQ",
@@ -92,22 +83,23 @@ public class Token {
         "SEMICOLON",
         "COLON",
         "COMMA",
-        "DOT",  
-        "QUEST",  
+        "DOT",   
+        "INSTANCEOF",   
+        "IMPORT", 
         "LBRACE",
         "RBRACE", 
         "LPAREN",
         "RPAREN",
         "LBRACK",
         "RBRACK"};
-    
-    public Token (int p_kind, String p_lexeme, int p_line, int p_charBegin, int p_charEnd) {
-        sym = p_kind;
-        lexeme = p_lexeme;
-        line = p_line;
-        charBegin = p_charBegin;
-        charEnd = p_charEnd;
-    }
+        
+        public Token (int p_kind, String p_lexeme, int p_line, int p_charBegin, int p_charEnd) {
+            sym = p_kind;
+            lexeme = p_lexeme;
+            line = p_line;
+            charBegin = p_charBegin;
+            charEnd = p_charEnd;
+        }
     
     public int getCharBegin() { return charBegin; }
     public int getCharEnd()   { return charEnd; }
