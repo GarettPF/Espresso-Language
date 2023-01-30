@@ -75,7 +75,7 @@ terminal Token BOOLEAN_LITERAL,
                CHARACTER_LITERAL;											// literals
 
 // Operators
-terminal Token EQ 															// assignment op
+terminal Token EQ; 															// assignment op
 terminal Token LT, GT, LTEQ, GTEQ, EQEQ, NOTEQ, ANDAND, OROR; 				// comparisons ops
 terminal Token PLUSPLUS, MINUSMINUS, PLUS, MINUS, MULT, DIV, MOD; 			// mathematical ops
 terminal Token COMP, NOT; 													// inverts
