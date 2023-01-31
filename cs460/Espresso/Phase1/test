@@ -1,0 +1,58 @@
+#!/bin/sh
+
+espressoV='Espresso'
+badTests=$(ls -R -p Tests/$espressoV/BadTests | grep -v /)
+goodTests=$(ls -R -p Tests/$espressoV/GoodTests | grep -v /)
+
+# Test all scripts
+if [ $# -eq 0 ]; then
+    fails=0
+
+    # Perform Good Tests
+    echo "=============== TESTING GOOD TESTS ==============="
+    for file in $goodTests; do
+
+        output=$(./espressoc Tests/$espressoV/GoodTests/$file)
+        if [[ $output == *"S = U = C = C = E = S = S"* ]]; then
+            echo -e "Test file: $file \e[34mSUCCESS\e[0m"
+        else
+            echo -e "Test file: $file \e[31mERROR\e[0m"
+            ((fails++))
+        fi
+    done
+    echo "Espresso failed $fails times"
+
+    for n in {1..5}; do echo ""; done
+    fails=0
+
+    # Perform Bad Tests
+    echo "=============== TESTING BAD TESTS ==============="
+    for file in $badTests; do
+
+        output=$(./espressoc Tests/$espressoV/BadTests/$file)
+        if [[ $output != *"S = U = C = C = E = S = S"* ]]; then
+            echo -e "Test file: $file \e[34mSUCCESS\e[0m"
+        else
+            echo -e "Test file: $file \e[31mERROR\e[0m"
+            ((fails++))
+        fi
+    done
+    echo "Espresso failed $fails times"
+
+    for n in {1..5}; do echo ""; done
+
+# Test specific script
+elif [ $# -eq 1 ]; then
+    for file in $goodTests; do
+        if [[ $file == *$1* ]]; then
+            echo "Testing file: $file"
+            ./espressoc Tests/$espressoV/GoodTests/$file
+        fi
+    done
+    for file in $badTests; do
+        if [[ $file == *$1* ]]; then
+            echo "Testing file: $file"
+            ./espressoc Tests/$espressoV/BadTests/$file
+        fi
+    done
+fi

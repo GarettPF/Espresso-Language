@@ -91,9 +91,9 @@ terminal Token IMPORT;														// import
 
 // Brackets
 // YOUR CODE HERE
-terminal Token LBRACE, RBRACE, 												// []
+terminal Token LBRACE, RBRACE, 												// {}
                LPAREN, RPAREN, 												// ()
-               LBRACK, RBRACK; 												// {}
+               LBRACK, RBRACK; 												// []
 
 // -----------------------------------------------------------------------------
 // Non terminals
@@ -296,7 +296,7 @@ type_declaration 							::= class_declaration;
 // 19.7) Productions used only in the LALR(1) grammar
 // -----------------------------------------------------------------------------
 
-modifiers_opt 								::= modifier | ;
+modifiers_opt 								::= modifiers | ;
 modifiers 									::= modifier | modifiers modifier;
 modifier 									::=	PUBLIC
 											|	PRIVATE
@@ -315,7 +315,7 @@ modifier 									::=	PUBLIC
 class_declaration 							::= modifiers_opt CLASS name super_opt class_body;
 super_opt 									::= super | ;
 super 										::= EXTENDS class_type;
-class_body 									::= LBRACK class_body_declarations_opt RBRACK;
+class_body 									::= LBRACE class_body_declarations_opt RBRACE;
 class_body_declarations_opt 				::= class_body_declarations | ;
 class_body_declarations 					::= class_body_declaration | class_body_declarations class_body_declaration;
 class_body_declaration  					::=	field_declaration
@@ -343,7 +343,7 @@ method_declaration 							::=  modifiers_opt type name LPAREN formal_parameter_l
 											|	modifiers_opt VOID name LPAREN formal_parameter_list_opt RPAREN method_body;
 method_body 								::= block | SEMICOLON;
 formal_parameter_list_opt 					::= formal_parameter_list | ;
-formal_parameter_list 						::= formal_parameter | formal_parameter_list COLON formal_parameter;
+formal_parameter_list 						::= formal_parameter | formal_parameter_list COMMA formal_parameter;
 formal_parameter 							::= type variable_declarator_id;
 
 // -----------------------------------------------------------------------------
@@ -357,10 +357,10 @@ static_initializer ::= STATIC block;
 // -----------------------------------------------------------------------------
 
 constructor_declaration 					::= modifiers_opt name LPAREN formal_parameter_list_opt RPAREN constructor_body;
-constructor_body        					::= LBRACK explicit_constructor_invocation block_statements RBRACK
-											|	LBRACK explicit_constructor_invocation RBRACK
-											|	LBRACK block_statements RBRACK
-											|	LBRACK RBRACK
+constructor_body        					::= LBRACE explicit_constructor_invocation block_statements RBRACE
+											|	LBRACE explicit_constructor_invocation RBRACE
+											|	LBRACE block_statements RBRACE
+											|	LBRACE RBRACE
 											;
 explicit_constructor_invocation 			::= SUPER LPAREN argument_list_opt RPAREN SEMICOLON
 											|	THIS LPAREN argument_list_opt RPAREN SEMICOLON
@@ -386,7 +386,7 @@ explicit_constructor_invocation 			::= SUPER LPAREN argument_list_opt RPAREN SEM
 // 19.11) Blocks and Statements
 // -----------------------------------------------------------------------------
 
-block                       				::= LBRACK block_statements_opt RBRACK;
+block                       				::= LBRACE block_statements_opt RBRACE;
 block_statements_opt        				::= block_statements | ;
 block_statements            				::= block_statement | block_statements block_statement;
 block_statement             				::= local_variable_declaration SEMICOLON | statement;
@@ -432,7 +432,7 @@ for_init_opt                        		::= for_init | ;
 for_init                            		::= statement_expression_list | local_variable_declaration;
 for_update_opt                      		::= for_update | ;
 for_update                          		::= statement_expression_list;
-statement_expression_list           		::= statement_expression | statement_expression_list COLON statement_expression;
+statement_expression_list           		::= statement_expression | statement_expression_list COMMA statement_expression;
 break_statement                     		::= BREAK SEMICOLON;
 continue_statement                  		::= CONTINUE SEMICOLON;
 return_statement                    		::= RETURN expression_opt SEMICOLON;
@@ -452,7 +452,7 @@ primary_no_new_array						::= literal
 											;
 class_instance_creation_expression			::= NEW class_type LPAREN argument_list_opt RPAREN;
 argument_list_opt							::= argument_list | ;
-argument_list								::= expression | argument_list COLON expression;
+argument_list								::= expression | argument_list COMMA expression;
 field_access								::= primary DOT name
 											|	SUPER DOT name
 											|	name DOT name
