@@ -30,6 +30,7 @@ public class Token {
         "NEW",   
         "SUPER",         
         "THIS",  
+        "EXTENDS",
         "VOID",          
         "RETURN",  
         "PUBLIC", 

@@ -123,7 +123,6 @@ FalseLiteral = false
 
 %%
   /* Keywords */
-  "abstract"                     { return token(sym.ABSTRACT); }
   "boolean"                      { return token(sym.BOOLEAN); } 
   "break"                        { return token(sym.BREAK); }  
   "byte"                         { return token(sym.BYTE); }
@@ -154,8 +153,6 @@ FalseLiteral = false
   "new"                          { return token(sym.NEW); }
   "instanceof"                   { return token(sym.INSTANCEOF); }
 
-
-			   
   /* Null Literal */		   
   "null"                         { return token(sym.NULL_LITERAL); } 
   				     				   
