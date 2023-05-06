@@ -594,8 +594,8 @@ variable_declarator ::=
 
 // Type: Name <: AST
 variable_declarator_id ::=
-		name:n									{: RESULT = Name(n); :}
-	|	variable_declarator_id:v LBRACK RBRACK	{: RESULT = Name(v, 0); :}
+		name:n									{: RESULT = n; :}
+	|	variable_declarator_id:v LBRACK RBRACK	{: RESULT = new Name(v, 1); :}
 	;
 
 // Type: Expression <: AST
@@ -623,7 +623,7 @@ method_declaration ::=
 // Type: Block <: AST
 method_body ::=
 		block:b		{: RESULT = b; :}
-	|	SEMICOLON	{: RESULT = NULL; :}
+	|	SEMICOLON	{: RESULT = null; :}
 	;
 
 
@@ -642,22 +642,22 @@ formal_parameter_list ::=
 // Type: ParamDecl <: AST
 formal_parameter ::=
 		type:t variable_declarator_id:n		
-		       			{:
-					  // fix the array type - see field_decls for more info
-					  Type at;
-                            		  if (n.getArrayDepth() != 0) {
-                              		    if (t.isArrayType()) {
-                                	    ArrayType att = (ArrayType)t;
-					    at = new ArrayType(att.baseType(),
-                                                               att.getDepth()+n.getArrayDepth());
-	                                    } else {
-			      	                at = new ArrayType(t, n.getArrayDepth());
-                                            }			
-                                            n.setArrayDepth(0);
-                                          } else
-                                            at = t;
-					  RESULT = new ParamDecl(at, n); 
-					:}
+			{:
+				// fix the array type - see field_decls for more info
+				Type at;
+				if (n.getArrayDepth() != 0) {
+					if (t.isArrayType()) {
+						ArrayType att = (ArrayType)t;
+						at = new ArrayType(att.baseType(),
+									att.getDepth()+n.getArrayDepth());
+					} else {
+						at = new ArrayType(t, n.getArrayDepth());
+					}			
+						n.setArrayDepth(0);
+				} else
+					at = t;
+				RESULT = new ParamDecl(at, n); 
+			:}
 	;
 
 // -----------------------------------------------------------------------------
@@ -687,15 +687,15 @@ constructor_body ::=
 	|	LBRACE explicit_constructor_invocation:e RBRACE						
 			{: RESULT = new ConstructorBody(e, new Sequence()); :}
 	|	LBRACE block_statements:b RBRACE
-			{: RESULT = new ConstructorBody(NULL, b); :}
+			{: RESULT = new ConstructorBody(null, b); :}
 	|   LBRACE RBRACE
-			{: RESULT = new ConstructorBody(NULL, new Sequence()); :}
+			{: RESULT = new ConstructorBody(null, new Sequence()); :}
 	;
 
 // Type: CInvocation <: Expression <: AST
 explicit_constructor_invocation ::=
 		SUPER:s LPAREN argument_list_opt:a RPAREN SEMICOLON	{: RESULT = new CInvocation(s, a); :}
-	|	THIS:t LPAREN argument_list_opt:a RPAREN SEMICOLON	{: RESULT = new CInvocation(s, a); :}
+	|	THIS:t LPAREN argument_list_opt:a RPAREN SEMICOLON	{: RESULT = new CInvocation(t, a); :}
 	;
 
 // -----------------------------------------------------------------------------
@@ -710,18 +710,18 @@ explicit_constructor_invocation ::=
 interface_declaration ::=
 		modifiers_opt:m INTERFACE name:n 
 		extends_interfaces_opt:e interface_body:i
-		{: RESULT = new ClassDecl(m, n, (ClassType)NULL, e, i, ClassDecl.IS_INTERFACE); :}
+		{: RESULT = new ClassDecl(m, n, null, e, i, ClassDecl.IS_INTERFACE); :}
 	;
 
 // Type: Sequence(ClassType <: Type <: AST) <: AST
 extends_interfaces_opt ::=
 		extends_interfaces:ei	{: RESULT = ei; :}
-	|	/* Empty */				{: RESULT = NULL; :}
+	|	/* Empty */				{: RESULT = new Sequence(); :}
 	;
 
 // Type: Sequence(ClassType <: Type <: AST) <: AST
 extends_interfaces ::=
-		EXTENDS interface_type:it						{: RESULT = it; :}
+		EXTENDS interface_type:it						{: RESULT = new Sequence(it); :}
 	|	extends_interfaces:ei COMMA interface_type:it	{: RESULT = ei.append(it); :}
 	;
 
@@ -772,11 +772,11 @@ constant_declaration ::=
 abstract_method_declaration ::=
 		modifiers_opt:m  type:r  name:n 
 		LPAREN  formal_parameter_list_opt:p  RPAREN SEMICOLON 
-			{: RESULT = new MethodDecl(m, t, n, p, new Block(new Sequence()), MethodDecl.IS_INTERFACE_MEMBER); :}
+			{: RESULT = new MethodDecl(m, r, n, p, null, MethodDecl.IS_INTERFACE_MEMBER); :}
 	|	modifiers_opt:m  VOID:v	 name:n 
 		LPAREN  formal_parameter_list_opt:p  RPAREN SEMICOLON
 			{: RESULT = new MethodDecl(m, new PrimitiveType(v, PrimitiveType.VoidKind),
-				n, p, new Block(new Sequence()), MethodDecl.IS_INTERFACE_MEMBER); :}
+				n, p, null, MethodDecl.IS_INTERFACE_MEMBER); :}
 	;
 
 // -----------------------------------------------------------------------------
@@ -807,7 +807,7 @@ variable_initializers ::=
 
 // Type: Block <: Statement <: AST
 block ::=	
-		LBRACE block_statements_opt:l RBRACE	{: RESULT = l; :}
+		LBRACE block_statements_opt:l RBRACE	{: RESULT = new Block(l); :}
 	;
 
 // Type: Sequence(Statement <: AST) <: AST
@@ -860,7 +860,7 @@ statement ::=
 	|	if_then_statement:l 			  			{: RESULT = l; :}
 	|	if_then_else_statement:l 		  			{: RESULT = l; :}
 	|	while_statement:l 			  				{: RESULT = l; :}
-	|	for_statement:l 			  
+	|	for_statement:l 			  				{: RESULT = l; :}
 	;
 
 // Type: Statement <: AST
@@ -885,7 +885,7 @@ statement_without_trailing_substatement ::=
 
 // Type: Block <: Statement <: AST
 empty_statement ::=
-		SEMICOLON	{: RESULT = new Block(new Sequence()); :}
+		SEMICOLON	{: RESULT = null; :}
 	;
 
 // Type: ExprStat <: Statement <: AST
@@ -906,7 +906,7 @@ statement_expression ::=
 
 // Type: IfStat <: Statement <: AST
 if_then_statement ::=
-		IF LPAREN expression:e RPAREN statement:t {: RESULT = new IfStat(e, t); :
+		IF LPAREN expression:e RPAREN statement:t {: RESULT = new IfStat(e, t); :}
 	;
 
 // Type: IfStat <: Statement <: AST
@@ -965,10 +965,10 @@ switch_labels ::=
 	|	switch_labels:ss  switch_label:s 	{: RESULT = ss.append(s); :}
 	;
 
-// Type: SwitchLabel <: AST	////////////////////////////////////////////////////////////////////////////////////////////////////
+// Type: SwitchLabel <: AST
 switch_label ::=
 		CASE constant_expression:e COLON	{: RESULT = new SwitchLabel(e, false); :}
-	|	DEFAULT COLON                     	{: RESULT = new SwitchLabel(NULL, true); :}
+	|	DEFAULT COLON                     	{: RESULT = new SwitchLabel(null, true); :}
 	;
 
 // Type: WhileStat <: Statement <: AST
@@ -1006,7 +1006,7 @@ for_init_opt ::=
 // Type: Sequence(ExprStat <: Statement <: AST) <: AST
 for_init ::=	
 		statement_expression_list:l		{: RESULT = l; :}
-	|	local_variable_declaration:l 	///////////////////////////////////////////////////////////////////////////
+	|	local_variable_declaration:l 	{: RESULT = l; :} 
 	;
 
 // Type: Sequence(ExprStat <: Statement <: AST) <: AST
@@ -1078,16 +1078,16 @@ argument_list_opt ::=
 
 // Type: Sequence(Expression <: AST) <: AST
 argument_list ::=
-		expression:l 						{: RESULT = l; :}
-	|	argument_list:ls COMMA expression:l	{: RESULT = ls.append(l); :}
+		expression:l 						{: RESULT = new Sequence(l); :}
+	|	argument_list:ls COMMA expression:l	{: RESULT = ls.merge(l); :}
 	;
 
 // Type: NewArray <: Expression <: AST
 array_creation_expression ::=
 		NEW primitive_type:t dim_exprs:d1 dims_opt:d2				
-			{: RESULT = new NewArray(t, d1, d2, new ArrayLiteral(new Sequence())); :}
+			{: RESULT = new NewArray(t, d1, d2, null); :}
 	|	NEW class_or_interface_type:t dim_exprs:d1 dims_opt:d2
-			{: RESULT = new NewArray(t, d1, d2, new ArrayLiteral(new Sequence())); :}
+			{: RESULT = new NewArray(t, d1, d2, null); :}
 	|	NEW primitive_type:t dims:d array_initializer:i
 			{: RESULT = new NewArray(t, new Sequence(), d, i); :}
 	|	NEW class_or_interface_type:t dims:d array_initializer:i
@@ -1101,7 +1101,7 @@ dim_expr ::= LBRACK expression:e RBRACK	{: RESULT = e; :}
 // Type: Sequence(Expression <: AST) <: AST
 dim_exprs ::=	
 		dim_expr:d     	       	 {: RESULT = new Sequence(d); :}
-	|	dim_exprs:ds dim_expr:d	 {: RESULT = ds.append(d); :}
+	|	dim_exprs:ds dim_expr:d	 {: RESULT = ds.merge(d); :}
 	;
 
 // Type: Sequence(NULL) <: AST
@@ -1112,8 +1112,8 @@ dims_opt ::=
 
 // Type: Sequence(NULL) <: AST
 dims ::=
-		LBRACK RBRACK	        {: RESULT = new Sequence(NULL); :}
-    |	dims:d LBRACK RBRACK	{: RESULT = d.append(NULL); :}
+		LBRACK RBRACK	        {: RESULT = new Sequence(null); :}
+    |	dims:d LBRACK RBRACK	{: RESULT = d.append(null); :}
 	;
 
 // Type: FieldRef <: Expression <: AST
@@ -1126,7 +1126,7 @@ field_access ::=
 // Type: Invocation <: Expression <: AST
 method_invocation ::=
 		name:n LPAREN argument_list_opt:a RPAREN				{: RESULT = new Invocation(n, a); :}
-	|	primary:t DOT name:f LPAREN argument_list_opt:a RPAREN	{: RESULT = new Invocation(t, f, l); :}
+	|	primary:t DOT name:f LPAREN argument_list_opt:a RPAREN	{: RESULT = new Invocation(t, f, a); :}
 	|	SUPER:s DOT name:f LPAREN argument_list_opt:a RPAREN 	{: RESULT = new Invocation(new Super(s), f, a); :}
 	|	name:t DOT name:f LPAREN argument_list_opt:a RPAREN 	{: RESULT = new Invocation(new NameExpr(t), f, a); :}
 	;
@@ -1147,38 +1147,38 @@ postfix_expression ::=
 
 // Type: UnaryPostExpr <: Expression <: AST
 post_increment_expression ::=
-		postfix_expression:e PLUSPLUS:o  {: RESULT = new UnaryPostExpr(e, o); :}
+		postfix_expression:e PLUSPLUS:o  {: RESULT = new UnaryPostExpr(e, new PostOp(o, PostOp.PLUSPLUS)); :}
 	;
 
 // Type: UnaryPostExpr <: Expression <: AST
 post_decrement_expression ::=
-		postfix_expression:e MINUSMINUS:o {: RESULT = new UnaryPostExpr(e, o); :}
+		postfix_expression:e MINUSMINUS:o {: RESULT = new UnaryPostExpr(e, new PostOp(o, PostOp.MINUSMINUS)); :}
 	;
 
 // Type: Expression <: AST
 unary_expression ::=
 		pre_increment_expression:p			{: RESULT = p; :}
 	|	pre_decrement_expression:p			{: RESULT = p; :}
-	| 	PLUS:o unary_expression:e			{: RESULT = new UnaryPreExpr(e, o); :}
-	|	MINUS:o unary_expression:e			{: RESULT = new UnaryPreExpr(e, o); :}
+	| 	PLUS:o unary_expression:e			{: RESULT = new UnaryPreExpr(e, new PreOp(o, PreOp.PLUS)); :}
+	|	MINUS:o unary_expression:e			{: RESULT = new UnaryPreExpr(e, new PreOp(o, PreOp.MINUS)); :}
 	|	unary_expression_not_plus_minus:l 	{: RESULT = l; :}
 	;
 
 // Type: UnaryPreExpr <: Expression <: AST
 pre_increment_expression ::=
-		PLUSPLUS:o unary_expression:e	{: RESULT = new UnaryPreExpr(e, o); :}
+		PLUSPLUS:o unary_expression:e	{: RESULT = new UnaryPreExpr(e, new PreOp(o, PreOp.PLUSPLUS)); :}
 	;
 
 // Type: UnaryPreExpr <: Expression <: AST
 pre_decrement_expression ::=
-		MINUSMINUS:o unary_expression:e	{: RESULT = new UnaryPreExpr(e, o); :}
+		MINUSMINUS:o unary_expression:e	{: RESULT = new UnaryPreExpr(e, new PreOp(o, PreOp.MINUSMINUS)); :}
 	;
 
 // Type: Expression <: AST
 unary_expression_not_plus_minus ::=
 		postfix_expression:l 		{: RESULT = l; :}
-	|	COMP:o unary_expression:e	{: RESULT = new UnaryPreExpr(e, o); :}
-	|	NOT:o unary_expression:e	{: RESULT = new UnaryPreExpr(e, o); :}
+	|	COMP:o unary_expression:e	{: RESULT = new UnaryPreExpr(e, new PreOp(o, PreOp.COMP)); :}
+	|	NOT:o unary_expression:e	{: RESULT = new UnaryPreExpr(e, new PreOp(o, PreOp.NOT)); :}
 	|	cast_expression:c			{: RESULT = c; :}
 	;
 
@@ -1239,9 +1239,9 @@ relational_expression ::=
 	|	relational_expression:e1 LTEQ:o shift_expression:e2
 			{: RESULT = new BinaryExpr(e1, e2, new BinOp(o, BinOp.LTEQ)); :}
 	|	relational_expression:e1 GTEQ:o shift_expression:e2
-			{: RESULT = new BinaryExpr(e1, e2, new BinOp(o, BinOP.GTEQ)); :}
+			{: RESULT = new BinaryExpr(e1, e2, new BinOp(o, BinOp.GTEQ)); :}
 	|   relational_expression:e1 INSTANCEOF:o name:e2 
-			{: RESULT = new BinaryExpr(e1, e2, new BinOp(o, BinOp.INSTANCEOF)); :}
+			{: RESULT = new BinaryExpr(e1, new NameExpr(e2), new BinOp(o, BinOp.INSTANCEOF)); :}
 	;
 
 // Type: Expression <: AST
@@ -1316,18 +1316,18 @@ assignment ::=
 
 // Type: AssignmentOp <: AST
 assignment_operator ::=
-                EQ:o        	{: RESULT = new AssignmentOp(o, AssignmentOp.EQ) :}
-        |       MULTEQ:o    	{: RESULT = new AssignmentOp(o, AssignmentOp.MULTEQ) :}
-        |       DIVEQ:o     	{: RESULT = new AssignmentOp(o, AssignmentOp.DIVEQ) :}
-        |       MODEQ:o     	{: RESULT = new AssignmentOp(o, AssignmentOp.MODEQ) :}
-        |       PLUSEQ:o    	{: RESULT = new AssignmentOp(o, AssignmentOp.PLUSEQ) :}
-        |       MINUSEQ:o   	{: RESULT = new AssignmentOp(o, AssignmentOp.MINUSEQ) :}
-        |       LSHIFTEQ:o  	{: RESULT = new AssignmentOp(o, AssignmentOp.LSHIFTEQ) :}
-        |       RSHIFTEQ:o  	{: RESULT = new AssignmentOp(o, AssignmentOp.RSHIFTEQ) :}
-        |       RRSHIFTEQ:o 	{: RESULT = new AssignmentOp(o, AssignmentOp.RRSHIFTEQ) :}
-        |       ANDEQ:o     	{: RESULT = new AssignmentOp(o, AssignmentOp.ANDEQ) :}
-        |       XOREQ:o     	{: RESULT = new AssignmentOp(o, AssignmentOp.XOREQ) :}
-        |       OREQ:o      	{: RESULT = new AssignmentOp(o, AssignmentOp.OREQ) :}
+                EQ:o        	{: RESULT = new AssignmentOp(o, AssignmentOp.EQ); :}
+        |       MULTEQ:o    	{: RESULT = new AssignmentOp(o, AssignmentOp.MULTEQ); :}
+        |       DIVEQ:o     	{: RESULT = new AssignmentOp(o, AssignmentOp.DIVEQ); :}
+        |       MODEQ:o     	{: RESULT = new AssignmentOp(o, AssignmentOp.MODEQ); :}
+        |       PLUSEQ:o    	{: RESULT = new AssignmentOp(o, AssignmentOp.PLUSEQ); :}
+        |       MINUSEQ:o   	{: RESULT = new AssignmentOp(o, AssignmentOp.MINUSEQ); :}
+        |       LSHIFTEQ:o  	{: RESULT = new AssignmentOp(o, AssignmentOp.LSHIFTEQ); :}
+        |       RSHIFTEQ:o  	{: RESULT = new AssignmentOp(o, AssignmentOp.RSHIFTEQ); :}
+        |       RRSHIFTEQ:o 	{: RESULT = new AssignmentOp(o, AssignmentOp.RRSHIFTEQ); :}
+        |       ANDEQ:o     	{: RESULT = new AssignmentOp(o, AssignmentOp.ANDEQ); :}
+        |       XOREQ:o     	{: RESULT = new AssignmentOp(o, AssignmentOp.XOREQ); :}
+        |       OREQ:o      	{: RESULT = new AssignmentOp(o, AssignmentOp.OREQ); :}
         ;       
 
 // Type: Expression <: AST
@@ -1340,7 +1340,7 @@ left_hand_side ::=
 // Type: Expression <: AST
 expression_opt ::=
 		expression:l 	{: RESULT = l; :}
-	|   /* Empty */ 	{: RESULT = NULL; :}
+	|   /* Empty */ 	{: RESULT = null; :}
 	;
 
 // Type: Expression <: AST

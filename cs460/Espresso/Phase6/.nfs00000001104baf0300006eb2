@@ -1,0 +1,728 @@
+Creating parser for Include/System.java
+Creating parser for Include/Io.java
+---------------------------------------------------------
+Generating code for: VectorElement
+
+** Assigning Addresses:
+58: ConstructorDecl:	Resetting address counter for constructor 'VectorElement'.
+58: ParamDecl:	Assigning address:  1 to parameter 'value'.
+58: End ConstructorDecl
+64: MethodDecl:	Resetting address counter for method 'setNext'.
+64: ParamDecl:	Assigning address:  1 to parameter 'next'.
+64: End MethodDecl
+68: MethodDecl:	Resetting address counter for method 'setPrevious'.
+68: ParamDecl:	Assigning address:  1 to parameter 'previous'.
+68: End MethodDecl
+72: MethodDecl:	Resetting address counter for method 'getNext'.
+72: End MethodDecl
+76: MethodDecl:	Resetting address counter for method 'getPrevious'.
+76: End MethodDecl
+80: MethodDecl:	Resetting address counter for method 'getValue'.
+80: End MethodDecl
+
+** Generating Bytecode Instructions:
+53: ClassDecl:	Generating code for class 'VectorElement'.
+54: FieldDecl:	Generating code.
+55: FieldDecl:	Generating code.
+56: FieldDecl:	Generating code.
+58: ConstructorDecl: Generating Code for constructor for class VectorElement
+0: CInvocation:	Generating code for Explicit Constructor Invocation.
+59: ExprStat:	Visiting an Expression Statement.
+59: Assignment:	Generating code for an Assignment.
+59: Generating reference for FieldRef target 
+59: This:	Generating code (access).
+59: NameExpr:	Generating code for a local var/param (access) for 'value'.
+60: ExprStat:	Visiting an Expression Statement.
+60: Assignment:	Generating code for an Assignment.
+60: Generating reference for FieldRef target 
+60: This:	Generating code (access).
+60: Literal:	Generating code for Literal 'null'.
+61: ExprStat:	Visiting an Expression Statement.
+61: Assignment:	Generating code for an Assignment.
+61: Generating reference for FieldRef target 
+61: This:	Generating code (access).
+61: Literal:	Generating code for Literal 'null'.
+64: MethodDecl:	Generating code for method 'setNext'.
+65: ExprStat:	Visiting an Expression Statement.
+65: Assignment:	Generating code for an Assignment.
+65: Generating reference for FieldRef target 
+65: This:	Generating code (access).
+65: NameExpr:	Generating code for a local var/param (access) for 'next'.
+68: MethodDecl:	Generating code for method 'setPrevious'.
+69: ExprStat:	Visiting an Expression Statement.
+69: Assignment:	Generating code for an Assignment.
+69: Generating reference for FieldRef target 
+69: This:	Generating code (access).
+69: NameExpr:	Generating code for a local var/param (access) for 'previous'.
+72: MethodDecl:	Generating code for method 'getNext'.
+73: ReturnStat:	Generating code.
+73: FieldRef:	Generating code (getfield code only!).
+73: This:	Generating code (access).
+76: MethodDecl:	Generating code for method 'getPrevious'.
+77: ReturnStat:	Generating code.
+77: FieldRef:	Generating code (getfield code only!).
+77: This:	Generating code (access).
+80: MethodDecl:	Generating code for method 'getValue'.
+81: ReturnStat:	Generating code.
+81: FieldRef:	Generating code (getfield code only!).
+81: This:	Generating code (access).
+Generating code for: IntVector
+
+** Assigning Addresses:
+92: ConstructorDecl:	Resetting address counter for constructor 'IntVector'.
+92: ParamDecl:	Assigning address:  1 to parameter 'id'.
+92: End ConstructorDecl
+97: MethodDecl:	Resetting address counter for method 'getId'.
+97: End MethodDecl
+101: MethodDecl:	Resetting address counter for method 'size'.
+101: End MethodDecl
+105: MethodDecl:	Resetting address counter for method 'elementAt'.
+105: ParamDecl:	Assigning address:  1 to parameter 'index'.
+106: LocalDecl:	Assigning address:  2 to local variable 've'.
+105: End MethodDecl
+114: MethodDecl:	Resetting address counter for method 'remove'.
+114: ParamDecl:	Assigning address:  1 to parameter 'index'.
+123: LocalDecl:	Assigning address:  2 to local variable 've'.
+114: End MethodDecl
+135: MethodDecl:	Resetting address counter for method 'addElement'.
+135: ParamDecl:	Assigning address:  1 to parameter 'value'.
+136: LocalDecl:	Assigning address:  2 to local variable 've'.
+135: End MethodDecl
+
+** Generating Bytecode Instructions:
+86: ClassDecl:	Generating code for class 'IntVector'.
+88: FieldDecl:	Generating code.
+88: FieldDecl:	Generating code.
+89: FieldDecl:	Generating code.
+90: FieldDecl:	Generating code.
+92: ConstructorDecl: Generating Code for constructor for class IntVector
+0: CInvocation:	Generating code for Explicit Constructor Invocation.
+93: ExprStat:	Visiting an Expression Statement.
+93: Assignment:	Generating code for an Assignment.
+93: Generating reference for FieldRef target 
+93: This:	Generating code (access).
+93: Literal:	Generating code for Literal '0'.
+94: ExprStat:	Visiting an Expression Statement.
+94: Assignment:	Generating code for an Assignment.
+94: Generating reference for FieldRef target 
+94: This:	Generating code (access).
+94: NameExpr:	Generating code for a local var/param (access) for 'id'.
+97: MethodDecl:	Generating code for method 'getId'.
+98: ReturnStat:	Generating code.
+98: FieldRef:	Generating code (getfield code only!).
+98: This:	Generating code (access).
+101: MethodDecl:	Generating code for method 'size'.
+102: ReturnStat:	Generating code.
+102: FieldRef:	Generating code (getfield code only!).
+102: This:	Generating code (access).
+105: MethodDecl:	Generating code for method 'elementAt'.
+106: LocalDecl:	Generating code for the initializer for variable 've'.
+106: FieldRef:	Generating code (getfield code only!).
+106: This:	Generating code (access).
+107: While Stat:	Generating Code.
+107: BinaryExpr:	Generating code for > :  int -> int -> boolean.
+107: NameExpr:	Generating code for a local var/param (access) for 'index'.
+107: Literal:	Generating code for Literal '0'.
+108: ExprStat:	Visiting an Expression Statement.
+108: Assignment:	Generating code for an Assignment.
+108: Invocation:	Generating code for invoking method 'getNext' in class 'VectorElement'.
+108: Invocation:	Generating code for the target.
+108: NameExpr:	Generating code for a local var/param (access) for 've'.
+109: ExprStat:	Visiting an Expression Statement.
+109: UnaryPostExpr:	Generating code.
+109: NameExpr:	Generating code for a local var/param (access) for 'index'.
+109: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+111: ReturnStat:	Generating code.
+111: Invocation:	Generating code for invoking method 'getValue' in class 'VectorElement'.
+111: Invocation:	Generating code for the target.
+111: NameExpr:	Generating code for a local var/param (access) for 've'.
+114: MethodDecl:	Generating code for method 'remove'.
+115: IfStat:	Generating code.
+115: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+115: NameExpr:	Generating code for a local var/param (access) for 'index'.
+115: FieldRef:	Generating code (getfield code only!).
+115: This:	Generating code (access).
+116: IfStat:	Generating code.
+116: BinaryExpr:	Generating code for == :  int -> int -> boolean.
+116: NameExpr:	Generating code for a local var/param (access) for 'index'.
+116: Literal:	Generating code for Literal '0'.
+117: ExprStat:	Visiting an Expression Statement.
+117: Assignment:	Generating code for an Assignment.
+117: Generating reference for FieldRef target 
+117: This:	Generating code (access).
+117: Literal:	Generating code for Literal 'null'.
+118: ExprStat:	Visiting an Expression Statement.
+118: Assignment:	Generating code for an Assignment.
+118: Generating reference for FieldRef target 
+118: This:	Generating code (access).
+118: Literal:	Generating code for Literal 'null'.
+119: IfStat:	Generating code.
+119: BinaryExpr:	Generating code for == :  int -> int -> boolean.
+119: NameExpr:	Generating code for a local var/param (access) for 'index'.
+119: BinaryExpr:	Generating code for - :  int -> int -> int.
+119: FieldRef:	Generating code (getfield code only!).
+119: This:	Generating code (access).
+119: Literal:	Generating code for Literal '1'.
+120: ExprStat:	Visiting an Expression Statement.
+120: Assignment:	Generating code for an Assignment.
+120: Generating reference for FieldRef target 
+120: This:	Generating code (access).
+120: Invocation:	Generating code for invoking method 'getPrevious' in class 'VectorElement'.
+120: Invocation:	Generating code for the target.
+120: FieldRef:	Generating code (getfield code only!).
+120: This:	Generating code (access).
+121: ExprStat:	Visiting an Expression Statement.
+121: Invocation:	Generating code for invoking method 'setNext' in class 'VectorElement'.
+121: Invocation:	Generating code for the target.
+121: FieldRef:	Generating code (getfield code only!).
+121: This:	Generating code (access).
+121: Literal:	Generating code for Literal 'null'.
+121: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+123: LocalDecl:	Generating code for the initializer for variable 've'.
+123: FieldRef:	Generating code (getfield code only!).
+123: This:	Generating code (access).
+124: While Stat:	Generating Code.
+124: BinaryExpr:	Generating code for > :  int -> int -> boolean.
+124: NameExpr:	Generating code for a local var/param (access) for 'index'.
+124: Literal:	Generating code for Literal '0'.
+125: ExprStat:	Visiting an Expression Statement.
+125: Assignment:	Generating code for an Assignment.
+125: Invocation:	Generating code for invoking method 'getNext' in class 'VectorElement'.
+125: Invocation:	Generating code for the target.
+125: NameExpr:	Generating code for a local var/param (access) for 've'.
+126: ExprStat:	Visiting an Expression Statement.
+126: UnaryPostExpr:	Generating code.
+126: NameExpr:	Generating code for a local var/param (access) for 'index'.
+126: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+128: ExprStat:	Visiting an Expression Statement.
+128: Invocation:	Generating code for invoking method 'setNext' in class 'VectorElement'.
+128: Invocation:	Generating code for the target.
+128: Invocation:	Generating code for invoking method 'getPrevious' in class 'VectorElement'.
+128: Invocation:	Generating code for the target.
+128: NameExpr:	Generating code for a local var/param (access) for 've'.
+128: Invocation:	Generating code for invoking method 'getNext' in class 'VectorElement'.
+128: Invocation:	Generating code for the target.
+128: NameExpr:	Generating code for a local var/param (access) for 've'.
+128: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+129: ExprStat:	Visiting an Expression Statement.
+129: Invocation:	Generating code for invoking method 'setPrevious' in class 'VectorElement'.
+129: Invocation:	Generating code for the target.
+129: Invocation:	Generating code for invoking method 'getNext' in class 'VectorElement'.
+129: Invocation:	Generating code for the target.
+129: NameExpr:	Generating code for a local var/param (access) for 've'.
+129: Invocation:	Generating code for invoking method 'getPrevious' in class 'VectorElement'.
+129: Invocation:	Generating code for the target.
+129: NameExpr:	Generating code for a local var/param (access) for 've'.
+129: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+131: ExprStat:	Visiting an Expression Statement.
+131: UnaryPostExpr:	Generating code.
+131: This:	Generating code (access).
+131: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+135: MethodDecl:	Generating code for method 'addElement'.
+136: LocalDecl:	Generating code for the initializer for variable 've'.
+136: New:	Generating code
+136: NameExpr:	Generating code for a local var/param (access) for 'value'.
+137: IfStat:	Generating code.
+137: BinaryExpr:	Generating code for == :  int -> int -> boolean.
+137: FieldRef:	Generating code (getfield code only!).
+137: This:	Generating code (access).
+137: Literal:	Generating code for Literal '0'.
+138: ExprStat:	Visiting an Expression Statement.
+138: Assignment:	Generating code for an Assignment.
+138: Generating reference for FieldRef target 
+138: This:	Generating code (access).
+138: NameExpr:	Generating code for a local var/param (access) for 've'.
+139: ExprStat:	Visiting an Expression Statement.
+139: Assignment:	Generating code for an Assignment.
+139: Generating reference for FieldRef target 
+139: This:	Generating code (access).
+139: NameExpr:	Generating code for a local var/param (access) for 've'.
+141: ExprStat:	Visiting an Expression Statement.
+141: Invocation:	Generating code for invoking method 'setPrevious' in class 'VectorElement'.
+141: Invocation:	Generating code for the target.
+141: NameExpr:	Generating code for a local var/param (access) for 've'.
+141: FieldRef:	Generating code (getfield code only!).
+141: This:	Generating code (access).
+141: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+142: ExprStat:	Visiting an Expression Statement.
+142: Invocation:	Generating code for invoking method 'setNext' in class 'VectorElement'.
+142: Invocation:	Generating code for the target.
+142: FieldRef:	Generating code (getfield code only!).
+142: This:	Generating code (access).
+142: NameExpr:	Generating code for a local var/param (access) for 've'.
+142: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+143: ExprStat:	Visiting an Expression Statement.
+143: Assignment:	Generating code for an Assignment.
+143: Generating reference for FieldRef target 
+143: This:	Generating code (access).
+143: NameExpr:	Generating code for a local var/param (access) for 've'.
+145: ExprStat:	Visiting an Expression Statement.
+145: UnaryPostExpr:	Generating code.
+145: This:	Generating code (access).
+145: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+Generating code for: Pegs
+
+** Assigning Addresses:
+154: MethodDecl:	Resetting address counter for method 'move'.
+154: ParamDecl:	Assigning address:  0 to parameter 'count'.
+154: ParamDecl:	Assigning address:  1 to parameter 'from'.
+154: ParamDecl:	Assigning address:  2 to parameter 'to'.
+155: ParamDecl:	Assigning address:  3 to parameter 'via'.
+162: LocalDecl:	Assigning address:  4 to local variable 's1'.
+163: LocalDecl:	Assigning address:  5 to local variable 'disc'.
+154: End MethodDecl
+175: MethodDecl:	Resetting address counter for method 'printDisc'.
+175: ParamDecl:	Assigning address:  0 to parameter 'width'.
+177: LocalDecl:	Assigning address:  1 to local variable 'i'.
+179: LocalDecl:	Assigning address:  2 to local variable 'i'.
+182: LocalDecl:	Assigning address:  3 to local variable 'i'.
+184: LocalDecl:	Assigning address:  4 to local variable 'i'.
+175: End MethodDecl
+189: MethodDecl:	Resetting address counter for method 'print'.
+190: LocalDecl:	Assigning address:  0 to local variable 's1'.
+191: LocalDecl:	Assigning address:  1 to local variable 's2'.
+192: LocalDecl:	Assigning address:  2 to local variable 's3'.
+194: LocalDecl:	Assigning address:  3 to local variable 'i'.
+189: End MethodDecl
+217: MethodDecl:	Resetting address counter for method 'main'.
+217: ParamDecl:	Assigning address:  0 to parameter 'args'.
+223: LocalDecl:	Assigning address:  1 to local variable 'i'.
+217: End MethodDecl
+0: ConstructorDecl:	Resetting address counter for constructor 'Pegs'.
+0: End ConstructorDecl
+
+** Generating Bytecode Instructions:
+150: ClassDecl:	Generating code for class 'Pegs'.
+151: FieldDecl:	Generating code.
+151: FieldDecl:	Generating code.
+151: FieldDecl:	Generating code.
+152: FieldDecl:	Generating code.
+215: FieldDecl:	Generating code.
+150: Inserting empty StaticInit into partse tree.
+154: MethodDecl:	Generating code for method 'move'.
+156: IfStat:	Generating code.
+156: BinaryExpr:	Generating code for == :  int -> int -> boolean.
+156: NameExpr:	Generating code for a local var/param (access) for 'count'.
+156: Literal:	Generating code for Literal '1'.
+157: ExprStat:	Visiting an Expression Statement.
+157: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+157: Invocation:	Generating code for the target.
+157: FieldRef:	Generating code (getfield code only!).
+157: NameExpr:	Was a class name - skip it :System
+157: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+157: Literal:	Generating code for Literal '"Move one disc from peg "'.
+157: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+158: ExprStat:	Visiting an Expression Statement.
+158: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+158: Invocation:	Generating code for the target.
+158: FieldRef:	Generating code (getfield code only!).
+158: NameExpr:	Was a class name - skip it :System
+158: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+158: Invocation:	Generating code for invoking method 'getId' in class 'IntVector'.
+158: Invocation:	Generating code for the target.
+158: NameExpr:	Generating code for a local var/param (access) for 'from'.
+158: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+159: ExprStat:	Visiting an Expression Statement.
+159: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+159: Invocation:	Generating code for the target.
+159: FieldRef:	Generating code (getfield code only!).
+159: NameExpr:	Was a class name - skip it :System
+159: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+159: Literal:	Generating code for Literal '" to "'.
+159: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+160: ExprStat:	Visiting an Expression Statement.
+160: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+160: Invocation:	Generating code for the target.
+160: FieldRef:	Generating code (getfield code only!).
+160: NameExpr:	Was a class name - skip it :System
+160: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+160: Invocation:	Generating code for invoking method 'getId' in class 'IntVector'.
+160: Invocation:	Generating code for the target.
+160: NameExpr:	Generating code for a local var/param (access) for 'to'.
+160: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+161: ExprStat:	Visiting an Expression Statement.
+161: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+161: Invocation:	Generating code for the target.
+161: FieldRef:	Generating code (getfield code only!).
+161: NameExpr:	Was a class name - skip it :System
+161: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+161: Literal:	Generating code for Literal '"."'.
+161: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+162: LocalDecl:	Generating code for the initializer for variable 's1'.
+162: Invocation:	Generating code for invoking method 'size' in class 'IntVector'.
+162: Invocation:	Generating code for the target.
+162: NameExpr:	Generating code for a local var/param (access) for 'from'.
+163: LocalDecl:	Generating code for the initializer for variable 'disc'.
+163: Invocation:	Generating code for invoking method 'elementAt' in class 'IntVector'.
+163: Invocation:	Generating code for the target.
+163: NameExpr:	Generating code for a local var/param (access) for 'from'.
+163: BinaryExpr:	Generating code for - :  int -> int -> int.
+163: NameExpr:	Generating code for a local var/param (access) for 's1'.
+163: Literal:	Generating code for Literal '1'.
+164: ExprStat:	Visiting an Expression Statement.
+164: Invocation:	Generating code for invoking method 'remove' in class 'IntVector'.
+164: Invocation:	Generating code for the target.
+164: NameExpr:	Generating code for a local var/param (access) for 'from'.
+164: BinaryExpr:	Generating code for - :  int -> int -> int.
+164: NameExpr:	Generating code for a local var/param (access) for 's1'.
+164: Literal:	Generating code for Literal '1'.
+164: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+165: ExprStat:	Visiting an Expression Statement.
+165: Invocation:	Generating code for invoking method 'addElement' in class 'IntVector'.
+165: Invocation:	Generating code for the target.
+165: NameExpr:	Generating code for a local var/param (access) for 'to'.
+165: NameExpr:	Generating code for a local var/param (access) for 'disc'.
+165: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+166: ExprStat:	Visiting an Expression Statement.
+166: Invocation:	Generating code for invoking method 'print' in class 'Pegs'.
+166: Invocation:	Generating code for the target.
+166: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+167: ExprStat:	Visiting an Expression Statement.
+167: UnaryPostExpr:	Generating code.
+167: NameExpr:	Was a class name - skip it :Pegs
+167: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+169: ExprStat:	Visiting an Expression Statement.
+169: Invocation:	Generating code for invoking method 'move' in class 'Pegs'.
+169: Invocation:	Generating code for the target.
+169: BinaryExpr:	Generating code for - :  int -> int -> int.
+169: NameExpr:	Generating code for a local var/param (access) for 'count'.
+169: Literal:	Generating code for Literal '1'.
+169: NameExpr:	Generating code for a local var/param (access) for 'from'.
+169: NameExpr:	Generating code for a local var/param (access) for 'via'.
+169: NameExpr:	Generating code for a local var/param (access) for 'to'.
+169: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+170: ExprStat:	Visiting an Expression Statement.
+170: Invocation:	Generating code for invoking method 'move' in class 'Pegs'.
+170: Invocation:	Generating code for the target.
+170: Literal:	Generating code for Literal '1'.
+170: NameExpr:	Generating code for a local var/param (access) for 'from'.
+170: NameExpr:	Generating code for a local var/param (access) for 'to'.
+170: NameExpr:	Generating code for a local var/param (access) for 'via'.
+170: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+171: ExprStat:	Visiting an Expression Statement.
+171: Invocation:	Generating code for invoking method 'move' in class 'Pegs'.
+171: Invocation:	Generating code for the target.
+171: BinaryExpr:	Generating code for - :  int -> int -> int.
+171: NameExpr:	Generating code for a local var/param (access) for 'count'.
+171: Literal:	Generating code for Literal '1'.
+171: NameExpr:	Generating code for a local var/param (access) for 'via'.
+171: NameExpr:	Generating code for a local var/param (access) for 'to'.
+171: NameExpr:	Generating code for a local var/param (access) for 'from'.
+171: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+175: MethodDecl:	Generating code for method 'printDisc'.
+176: ExprStat:	Visiting an Expression Statement.
+176: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+176: Invocation:	Generating code for the target.
+176: FieldRef:	Generating code (getfield code only!).
+176: NameExpr:	Was a class name - skip it :System
+176: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+176: Literal:	Generating code for Literal '" "'.
+176: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+177: ForStat:	Generating code.
+177: LocalDecl:	Generating code for the initializer for variable 'i'.
+177: Literal:	Generating code for Literal '0'.
+177: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+177: NameExpr:	Generating code for a local var/param (access) for 'i'.
+177: BinaryExpr:	Generating code for - :  int -> int -> int.
+177: Literal:	Generating code for Literal '10'.
+177: NameExpr:	Generating code for a local var/param (access) for 'width'.
+178: ExprStat:	Visiting an Expression Statement.
+178: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+178: Invocation:	Generating code for the target.
+178: FieldRef:	Generating code (getfield code only!).
+178: NameExpr:	Was a class name - skip it :System
+178: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+178: Literal:	Generating code for Literal '" "'.
+178: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+177: ExprStat:	Visiting an Expression Statement.
+177: UnaryPostExpr:	Generating code.
+177: NameExpr:	Generating code for a local var/param (access) for 'i'.
+177: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+179: ForStat:	Generating code.
+179: LocalDecl:	Generating code for the initializer for variable 'i'.
+179: Literal:	Generating code for Literal '0'.
+179: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+179: NameExpr:	Generating code for a local var/param (access) for 'i'.
+179: NameExpr:	Generating code for a local var/param (access) for 'width'.
+180: ExprStat:	Visiting an Expression Statement.
+180: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+180: Invocation:	Generating code for the target.
+180: FieldRef:	Generating code (getfield code only!).
+180: NameExpr:	Was a class name - skip it :System
+180: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+180: Literal:	Generating code for Literal '"="'.
+180: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+179: ExprStat:	Visiting an Expression Statement.
+179: UnaryPostExpr:	Generating code.
+179: NameExpr:	Generating code for a local var/param (access) for 'i'.
+179: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+181: ExprStat:	Visiting an Expression Statement.
+181: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+181: Invocation:	Generating code for the target.
+181: FieldRef:	Generating code (getfield code only!).
+181: NameExpr:	Was a class name - skip it :System
+181: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+181: Literal:	Generating code for Literal '"|"'.
+181: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+182: ForStat:	Generating code.
+182: LocalDecl:	Generating code for the initializer for variable 'i'.
+182: Literal:	Generating code for Literal '0'.
+182: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+182: NameExpr:	Generating code for a local var/param (access) for 'i'.
+182: NameExpr:	Generating code for a local var/param (access) for 'width'.
+183: ExprStat:	Visiting an Expression Statement.
+183: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+183: Invocation:	Generating code for the target.
+183: FieldRef:	Generating code (getfield code only!).
+183: NameExpr:	Was a class name - skip it :System
+183: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+183: Literal:	Generating code for Literal '"="'.
+183: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+182: ExprStat:	Visiting an Expression Statement.
+182: UnaryPostExpr:	Generating code.
+182: NameExpr:	Generating code for a local var/param (access) for 'i'.
+182: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+184: ForStat:	Generating code.
+184: LocalDecl:	Generating code for the initializer for variable 'i'.
+184: Literal:	Generating code for Literal '0'.
+184: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+184: NameExpr:	Generating code for a local var/param (access) for 'i'.
+184: BinaryExpr:	Generating code for - :  int -> int -> int.
+184: Literal:	Generating code for Literal '10'.
+184: NameExpr:	Generating code for a local var/param (access) for 'width'.
+185: ExprStat:	Visiting an Expression Statement.
+185: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+185: Invocation:	Generating code for the target.
+185: FieldRef:	Generating code (getfield code only!).
+185: NameExpr:	Was a class name - skip it :System
+185: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+185: Literal:	Generating code for Literal '" "'.
+185: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+184: ExprStat:	Visiting an Expression Statement.
+184: UnaryPostExpr:	Generating code.
+184: NameExpr:	Generating code for a local var/param (access) for 'i'.
+184: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+186: ExprStat:	Visiting an Expression Statement.
+186: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+186: Invocation:	Generating code for the target.
+186: FieldRef:	Generating code (getfield code only!).
+186: NameExpr:	Was a class name - skip it :System
+186: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+186: Literal:	Generating code for Literal '" "'.
+186: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+189: MethodDecl:	Generating code for method 'print'.
+190: LocalDecl:	Generating code for the initializer for variable 's1'.
+190: Invocation:	Generating code for invoking method 'size' in class 'IntVector'.
+190: Invocation:	Generating code for the target.
+190: FieldRef:	Generating code (getfield code only!).
+190: NameExpr:	Was a class name - skip it :Pegs
+191: LocalDecl:	Generating code for the initializer for variable 's2'.
+191: Invocation:	Generating code for invoking method 'size' in class 'IntVector'.
+191: Invocation:	Generating code for the target.
+191: FieldRef:	Generating code (getfield code only!).
+191: NameExpr:	Was a class name - skip it :Pegs
+192: LocalDecl:	Generating code for the initializer for variable 's3'.
+192: Invocation:	Generating code for invoking method 'size' in class 'IntVector'.
+192: Invocation:	Generating code for the target.
+192: FieldRef:	Generating code (getfield code only!).
+192: NameExpr:	Was a class name - skip it :Pegs
+194: ForStat:	Generating code.
+194: LocalDecl:	Generating code for the initializer for variable 'i'.
+194: BinaryExpr:	Generating code for - :  int -> int -> int.
+194: FieldRef:	Generating code (getfield code only!).
+194: NameExpr:	Was a class name - skip it :Pegs
+194: Literal:	Generating code for Literal '1'.
+194: BinaryExpr:	Generating code for >= :  int -> int -> boolean.
+194: NameExpr:	Generating code for a local var/param (access) for 'i'.
+194: Literal:	Generating code for Literal '0'.
+195: IfStat:	Generating code.
+195: BinaryExpr:	Generating code for > :  int -> int -> boolean.
+195: NameExpr:	Generating code for a local var/param (access) for 's1'.
+195: NameExpr:	Generating code for a local var/param (access) for 'i'.
+196: ExprStat:	Visiting an Expression Statement.
+196: Invocation:	Generating code for invoking method 'printDisc' in class 'Pegs'.
+196: Invocation:	Generating code for the target.
+196: Invocation:	Generating code for invoking method 'elementAt' in class 'IntVector'.
+196: Invocation:	Generating code for the target.
+196: FieldRef:	Generating code (getfield code only!).
+196: NameExpr:	Was a class name - skip it :Pegs
+196: NameExpr:	Generating code for a local var/param (access) for 'i'.
+196: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+198: ExprStat:	Visiting an Expression Statement.
+198: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+198: Invocation:	Generating code for the target.
+198: FieldRef:	Generating code (getfield code only!).
+198: NameExpr:	Was a class name - skip it :System
+198: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+198: Literal:	Generating code for Literal '"           |           "'.
+198: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+199: IfStat:	Generating code.
+199: BinaryExpr:	Generating code for > :  int -> int -> boolean.
+199: NameExpr:	Generating code for a local var/param (access) for 's2'.
+199: NameExpr:	Generating code for a local var/param (access) for 'i'.
+200: ExprStat:	Visiting an Expression Statement.
+200: Invocation:	Generating code for invoking method 'printDisc' in class 'Pegs'.
+200: Invocation:	Generating code for the target.
+200: Invocation:	Generating code for invoking method 'elementAt' in class 'IntVector'.
+200: Invocation:	Generating code for the target.
+200: FieldRef:	Generating code (getfield code only!).
+200: NameExpr:	Was a class name - skip it :Pegs
+200: NameExpr:	Generating code for a local var/param (access) for 'i'.
+200: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+202: ExprStat:	Visiting an Expression Statement.
+202: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+202: Invocation:	Generating code for the target.
+202: FieldRef:	Generating code (getfield code only!).
+202: NameExpr:	Was a class name - skip it :System
+202: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+202: Literal:	Generating code for Literal '"           |           "'.
+202: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+203: IfStat:	Generating code.
+203: BinaryExpr:	Generating code for > :  int -> int -> boolean.
+203: NameExpr:	Generating code for a local var/param (access) for 's3'.
+203: NameExpr:	Generating code for a local var/param (access) for 'i'.
+204: ExprStat:	Visiting an Expression Statement.
+204: Invocation:	Generating code for invoking method 'printDisc' in class 'Pegs'.
+204: Invocation:	Generating code for the target.
+204: Invocation:	Generating code for invoking method 'elementAt' in class 'IntVector'.
+204: Invocation:	Generating code for the target.
+204: FieldRef:	Generating code (getfield code only!).
+204: NameExpr:	Was a class name - skip it :Pegs
+204: NameExpr:	Generating code for a local var/param (access) for 'i'.
+204: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+206: ExprStat:	Visiting an Expression Statement.
+206: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+206: Invocation:	Generating code for the target.
+206: FieldRef:	Generating code (getfield code only!).
+206: NameExpr:	Was a class name - skip it :System
+206: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+206: Literal:	Generating code for Literal '"           |           "'.
+206: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+207: ExprStat:	Visiting an Expression Statement.
+207: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+207: Invocation:	Generating code for the target.
+207: FieldRef:	Generating code (getfield code only!).
+207: NameExpr:	Was a class name - skip it :System
+207: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+207: Literal:	Generating code for Literal '""'.
+207: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+194: ExprStat:	Visiting an Expression Statement.
+194: UnaryPostExpr:	Generating code.
+194: NameExpr:	Generating code for a local var/param (access) for 'i'.
+194: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+209: ExprStat:	Visiting an Expression Statement.
+209: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+209: Invocation:	Generating code for the target.
+209: FieldRef:	Generating code (getfield code only!).
+209: NameExpr:	Was a class name - skip it :System
+209: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+210: Literal:	Generating code for Literal '" ----------+----------  ----------+----------  ----------+---------- "'.
+209: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+211: ExprStat:	Visiting an Expression Statement.
+211: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+211: Invocation:	Generating code for the target.
+211: FieldRef:	Generating code (getfield code only!).
+211: NameExpr:	Was a class name - skip it :System
+211: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+212: Literal:	Generating code for Literal '"           1                      2                      3"'.
+211: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+217: MethodDecl:	Generating code for method 'main'.
+218: ExprStat:	Visiting an Expression Statement.
+218: Assignment:	Generating code for an Assignment.
+218: Generating reference for FieldRef target 
+218: NameExpr:	Was a class name - skip it :Pegs
+218: New:	Generating code
+218: Literal:	Generating code for Literal '1'.
+219: ExprStat:	Visiting an Expression Statement.
+219: Assignment:	Generating code for an Assignment.
+219: Generating reference for FieldRef target 
+219: NameExpr:	Was a class name - skip it :Pegs
+219: New:	Generating code
+219: Literal:	Generating code for Literal '2'.
+220: ExprStat:	Visiting an Expression Statement.
+220: Assignment:	Generating code for an Assignment.
+220: Generating reference for FieldRef target 
+220: NameExpr:	Was a class name - skip it :Pegs
+220: New:	Generating code
+220: Literal:	Generating code for Literal '3'.
+221: ExprStat:	Visiting an Expression Statement.
+221: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+221: Invocation:	Generating code for the target.
+221: FieldRef:	Generating code (getfield code only!).
+221: NameExpr:	Was a class name - skip it :System
+221: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+221: Literal:	Generating code for Literal '"How many Discs (Max 10)? "'.
+221: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+222: ExprStat:	Visiting an Expression Statement.
+222: Assignment:	Generating code for an Assignment.
+222: Generating reference for FieldRef target 
+222: NameExpr:	Was a class name - skip it :Pegs
+222: Invocation:	Generating code for invoking method 'readInt' in class 'Io'.
+222: Invocation:	Generating code for the target.
+222: FieldRef:	Generating code (getfield code only!).
+222: NameExpr:	Was a class name - skip it :System
+222: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+223: ForStat:	Generating code.
+223: LocalDecl:	Generating code for the initializer for variable 'i'.
+223: FieldRef:	Generating code (getfield code only!).
+223: NameExpr:	Was a class name - skip it :Pegs
+223: BinaryExpr:	Generating code for > :  int -> int -> boolean.
+223: NameExpr:	Generating code for a local var/param (access) for 'i'.
+223: Literal:	Generating code for Literal '0'.
+224: ExprStat:	Visiting an Expression Statement.
+224: Invocation:	Generating code for invoking method 'addElement' in class 'IntVector'.
+224: Invocation:	Generating code for the target.
+224: FieldRef:	Generating code (getfield code only!).
+224: NameExpr:	Was a class name - skip it :Pegs
+224: NameExpr:	Generating code for a local var/param (access) for 'i'.
+224: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+223: ExprStat:	Visiting an Expression Statement.
+223: UnaryPostExpr:	Generating code.
+223: NameExpr:	Generating code for a local var/param (access) for 'i'.
+223: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+225: ExprStat:	Visiting an Expression Statement.
+225: Invocation:	Generating code for invoking method 'print' in class 'Pegs'.
+225: Invocation:	Generating code for the target.
+225: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+226: ExprStat:	Visiting an Expression Statement.
+226: Invocation:	Generating code for invoking method 'move' in class 'Pegs'.
+226: Invocation:	Generating code for the target.
+226: FieldRef:	Generating code (getfield code only!).
+226: NameExpr:	Was a class name - skip it :Pegs
+226: FieldRef:	Generating code (getfield code only!).
+226: NameExpr:	Was a class name - skip it :Pegs
+226: FieldRef:	Generating code (getfield code only!).
+226: NameExpr:	Was a class name - skip it :Pegs
+226: FieldRef:	Generating code (getfield code only!).
+226: NameExpr:	Was a class name - skip it :Pegs
+226: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+227: ExprStat:	Visiting an Expression Statement.
+227: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+227: Invocation:	Generating code for the target.
+227: FieldRef:	Generating code (getfield code only!).
+227: NameExpr:	Was a class name - skip it :System
+227: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+227: Literal:	Generating code for Literal '"Number of moves: "'.
+227: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+228: ExprStat:	Visiting an Expression Statement.
+228: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+228: Invocation:	Generating code for the target.
+228: FieldRef:	Generating code (getfield code only!).
+228: NameExpr:	Was a class name - skip it :System
+228: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+228: FieldRef:	Generating code (getfield code only!).
+228: NameExpr:	Was a class name - skip it :Pegs
+228: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+0: ConstructorDecl: Generating Code for constructor for class Pegs
+0: CInvocation:	Generating code for Explicit Constructor Invocation.
+0: StaticInit:	Generating code for a Static initializer.
+152: Literal:	Generating code for Literal '0'.
+Not generating code for 'System'
+Not generating code for 'Io'
+Not generating code for 'java/lang/Object'
+---------------------------------------------------------
+Writing Unoptimized jasmin file : 'VectorElement.rj'
+Writing Unoptimized jasmin file : 'IntVector.rj'
+Writing Unoptimized jasmin file : 'Pegs.rj'
+Generating code for the EVM? false
+============= S = U = C = C = E = S = S =================

@@ -1,0 +1,83 @@
+#!/bin/sh
+
+espressoV='Espresso+'
+badTests=$(ls -R -p Tests/$espressoV/BadTests | grep -v /)
+goodTests=$(ls -R -p Tests/$espressoV/GoodTests | grep -v /)
+
+# Test all scripts
+if [ $# -eq 0 ]; then
+    fails=0
+
+    # Perform Good Tests
+    echo "=============== TESTING GOOD TESTS ==============="
+    for file in $goodTests; do
+
+        output=$(./espressoc Tests/$espressoV/GoodTests/$file)
+        result=$(./espressocr Tests/$espressoV/GoodTests/$file)
+        if [ "$output" == "$result" ]; then
+            echo -e "Test file: $file \e[34mSUCCESS\e[0m"
+        else
+            echo -e "Test file: $file \e[31mERROR\e[0m"
+            ((fails++))
+        fi
+    done
+    echo "Espresso failed $fails times"
+
+    for n in {1..5}; do echo ""; done
+    fails=0
+
+    # Perform Bad Tests
+    echo "=============== TESTING BAD TESTS ==============="
+    for file in $badTests; do
+
+        ./espressoc Tests/$espressoV/BadTests/$file > test.txt
+        search="Tests/.\+/BadTests/.\+: "
+        replace="Error: "
+        sed -i "s|$search|$replace|g" test.txt
+        
+        ./espressocr Tests/$espressoV/BadTests/$file > example.txt
+        search=".\+:.\+:.\+:.\+:"
+        replace="Error:"
+        sed -i "s|$search|$replace|g" example.txt
+
+        if [ "$(cat test.txt)" = "$(cat example.txt)" ]; then
+            echo -e "Test file: $file \e[34mSUCCESS\e[0m"
+        else
+            echo -e "Test file: $file \e[31mERROR\e[0m"
+            ((fails++))
+        fi
+        rm test.txt example.txt
+    done
+    echo "Espresso failed $fails times"
+
+    for n in {1..5}; do echo ""; done
+
+# Test specific script
+elif [ $# -eq 1 ]; then
+    ant
+    for file in $goodTests; do
+        if [[ $file == *$1* ]]; then
+            echo "Testing file: $file                                                       Correct Output"
+            ./espressoc Tests/$espressoV/GoodTests/$file > test.txt
+            ./espressocr Tests/$espressoV/GoodTests/$file > example.txt
+            # pr -m -t -w 120 test.txt example.txt
+            diff -y --width=200 test.txt example.txt
+        fi
+    done
+    for file in $badTests; do
+        if [[ $file == *$1* ]]; then
+            echo "Testing file: $file                                                       Correct Output"
+            ./espressoc Tests/$espressoV/BadTests/$file > test.txt
+            search="Tests/.\+/BadTests/.\+: "
+            replace="Error: "
+            sed -i "s|$search|$replace|g" test.txt
+            ./espressocr Tests/$espressoV/BadTests/$file > example.txt
+            search=".\+:.\+:.\+:.\+:"
+            replace="Error:"
+            sed -i "s|$search|$replace|g" example.txt
+            diff -y --width=200 test.txt example.txt
+        fi
+    done
+
+    rm test.txt example.txt
+fi

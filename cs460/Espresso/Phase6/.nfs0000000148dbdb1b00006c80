@@ -1,0 +1,32 @@
+Creating parser for Include/System.java
+Creating parser for Include/Io.java
+---------------------------------------------------------
+Generating code for: Main
+
+** Assigning Addresses:
+7: MethodDecl:	Resetting address counter for method 'main'.
+7: ParamDecl:	Assigning address:  0 to parameter 'args'.
+7: End MethodDecl
+0: ConstructorDecl:	Resetting address counter for constructor 'Main'.
+0: End ConstructorDecl
+
+** Generating Bytecode Instructions:
+6: ClassDecl:	Generating code for class 'Main'.
+7: MethodDecl:	Generating code for method 'main'.
+8: ExprStat:	Visiting an Expression Statement.
+8: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+8: Invocation:	Generating code for the target.
+8: FieldRef:	Generating code (getfield code only!).
+8: NameExpr:	Was a class name - skip it :System
+8: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+8: Literal:	Generating code for Literal '12'.
+8: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+0: ConstructorDecl: Generating Code for constructor for class Main
+0: CInvocation:	Generating code for Explicit Constructor Invocation.
+Not generating code for 'System'
+Not generating code for 'Io'
+Not generating code for 'java/lang/Object'
+---------------------------------------------------------
+Writing Unoptimized jasmin file : 'Main.rj'
+Generating code for the EVM? false
+============= S = U = C = C = E = S = S =================
