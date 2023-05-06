@@ -1,8 +1,10 @@
 #!/bin/sh
 
-espressoV='Espresso'
+espressoV='Espresso++'
 badTests=$(ls -R -p Tests/$espressoV/BadTests | grep -v /)
 goodTests=$(ls -R -p Tests/$espressoV/GoodTests | grep -v /)
+
+clear
 
 # Test all scripts
 if [ $# -eq 0 ]; then

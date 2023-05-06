@@ -1,68 +1,698 @@
 Creating parser for Include/System.java
 Creating parser for Include/Io.java
 ---------------------------------------------------------
-Generating code for: Main
+Generating code for: Assignment5
 
 ** Assigning Addresses:
-7: MethodDecl:	Resetting address counter for method 'main'.
-7: ParamDecl:	Assigning address:  0 to parameter 'args'.
-8: LocalDecl:	Assigning address:  1 to local variable 'a'.
-8: LocalDecl:	Assigning address:  2 to local variable 'b'.
-8: LocalDecl:	Assigning address:  3 to local variable 'c'.
-7: End MethodDecl
-0: ConstructorDecl:	Resetting address counter for constructor 'Main'.
+39: MethodDecl:	Resetting address counter for method 'fib'.
+39: ParamDecl:	Assigning address:  0 to parameter 'n'.
+40: LocalDecl:	Assigning address:  1 to local variable 'F'.
+41: LocalDecl:	Assigning address:  2 to local variable 'M'.
+43: LocalDecl:	Assigning address:  3 to local variable 'i'.
+44: LocalDecl:	Assigning address:  4 to local variable 'temp'.
+39: End MethodDecl
+56: MethodDecl:	Resetting address counter for method 'sieve'.
+56: ParamDecl:	Assigning address:  0 to parameter 'n'.
+57: LocalDecl:	Assigning address:  1 to local variable 'numbers'.
+58: LocalDecl:	Assigning address:  2 to local variable 'i'.
+61: LocalDecl:	Assigning address:  3 to local variable 'i'.
+63: LocalDecl:	Assigning address:  4 to local variable 'j'.
+70: LocalDecl:	Assigning address:  4 to local variable 'count'.
+71: LocalDecl:	Assigning address:  5 to local variable 'i'.
+74: LocalDecl:	Assigning address:  6 to local variable 'primes'.
+75: LocalDecl:	Assigning address:  7 to local variable 'index'.
+76: LocalDecl:	Assigning address:  8 to local variable 'i'.
+56: End MethodDecl
+85: MethodDecl:	Resetting address counter for method 'checkMatrixDim'.
+85: ParamDecl:	Assigning address:  0 to parameter 'M'.
+85: ParamDecl:	Assigning address:  1 to parameter 'n'.
+88: LocalDecl:	Assigning address:  2 to local variable 'i'.
+85: End MethodDecl
+94: MethodDecl:	Resetting address counter for method 'rjustify'.
+94: ParamDecl:	Assigning address:  0 to parameter 'val'.
+94: ParamDecl:	Assigning address:  1 to parameter 'n'.
+95: LocalDecl:	Assigning address:  2 to local variable 'result'.
+94: End MethodDecl
+101: MethodDecl:	Resetting address counter for method 'printMatrix'.
+101: ParamDecl:	Assigning address:  0 to parameter 'M'.
+101: ParamDecl:	Assigning address:  1 to parameter 'n'.
+103: LocalDecl:	Assigning address:  2 to local variable 'max'.
+104: LocalDecl:	Assigning address:  3 to local variable 'min'.
+105: LocalDecl:	Assigning address:  4 to local variable 'i'.
+106: LocalDecl:	Assigning address:  5 to local variable 'j'.
+112: LocalDecl:	Assigning address:  5 to local variable 'l1'.
+113: LocalDecl:	Assigning address:  6 to local variable 'l2'.
+114: LocalDecl:	Assigning address:  7 to local variable 'just'.
+116: LocalDecl:	Assigning address:  8 to local variable 'i'.
+118: LocalDecl:	Assigning address:  9 to local variable 'j'.
+101: End MethodDecl
+125: MethodDecl:	Resetting address counter for method 'matrixMult'.
+125: ParamDecl:	Assigning address:  0 to parameter 'A'.
+125: ParamDecl:	Assigning address:  1 to parameter 'B'.
+125: ParamDecl:	Assigning address:  2 to parameter 'n'.
+129: LocalDecl:	Assigning address:  3 to local variable 'C'.
+130: LocalDecl:	Assigning address:  4 to local variable 'i'.
+131: LocalDecl:	Assigning address:  5 to local variable 'j'.
+133: LocalDecl:	Assigning address:  5 to local variable 'i'.
+134: LocalDecl:	Assigning address:  6 to local variable 'j'.
+135: LocalDecl:	Assigning address:  7 to local variable 'k'.
+125: End MethodDecl
+141: MethodDecl:	Resetting address counter for method 'main'.
+141: ParamDecl:	Assigning address:  0 to parameter 'args'.
+143: LocalDecl:	Assigning address:  1 to local variable 'i'.
+147: LocalDecl:	Assigning address:  2 to local variable 'primes'.
+150: LocalDecl:	Assigning address:  3 to local variable 'i'.
+169: LocalDecl:	Assigning address:  4 to local variable 'A'.
+169: LocalDecl:	Assigning address:  5 to local variable 'B'.
+169: LocalDecl:	Assigning address:  6 to local variable 'C'.
+174: LocalDecl:	Assigning address:  7 to local variable 'i'.
+141: End MethodDecl
+0: ConstructorDecl:	Resetting address counter for constructor 'Assignment5'.
 0: End ConstructorDecl
 
 ** Generating Bytecode Instructions:
-6: ClassDecl:	Generating code for class 'Main'.
-7: MethodDecl:	Generating code for method 'main'.
-8: LocalDecl:	Visiting local variable declaration for variable 'a'.
-8: LocalDecl:	Visiting local variable declaration for variable 'b'.
-8: LocalDecl:	Visiting local variable declaration for variable 'c'.
-9: ExprStat:	Visiting an Expression Statement.
-9: Assignment:	Generating code for an Assignment.
-9: Literal:	Generating code for Literal '10'.
-10: ExprStat:	Visiting an Expression Statement.
-10: Assignment:	Generating code for an Assignment.
-10: Literal:	Generating code for Literal '0'.
-11: ExprStat:	Visiting an Expression Statement.
-11: Assignment:	Generating code for an Assignment.
-11: Literal:	Generating code for Literal '0'.
-12: While Stat:	Generating Code.
-12: BinaryExpr:	Generating code for > :  int -> int -> boolean.
-12: NameExpr:	Generating code for a local var/param (access) for 'a'.
-12: Literal:	Generating code for Literal '0'.
-13: ExprStat:	Visiting an Expression Statement.
-13: Assignment:	Generating code for an Assignment.
-13: BinaryExpr:	Generating code for + :  int -> int -> int.
-13: NameExpr:	Generating code for a local var/param (access) for 'b'.
-13: NameExpr:	Generating code for a local var/param (access) for 'a'.
-14: ExprStat:	Visiting an Expression Statement.
-14: UnaryPostExpr:	Generating code.
-14: NameExpr:	Generating code for a local var/param (access) for 'c'.
-14: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
-15: ExprStat:	Visiting an Expression Statement.
-15: UnaryPostExpr:	Generating code.
-15: NameExpr:	Generating code for a local var/param (access) for 'a'.
-15: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
-17: ExprStat:	Visiting an Expression Statement.
-17: Invocation:	Generating code for invoking method 'println' in class 'Io'.
-17: Invocation:	Generating code for the target.
-17: FieldRef:	Generating code (getfield code only!).
-17: NameExpr:	Was a class name - skip it :System
-17: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
-17: BinaryExpr:	Generating code for + :  int -> int -> int.
-17: BinaryExpr:	Generating code for + :  int -> int -> int.
-17: NameExpr:	Generating code for a local var/param (access) for 'a'.
-17: NameExpr:	Generating code for a local var/param (access) for 'b'.
-17: NameExpr:	Generating code for a local var/param (access) for 'c'.
-17: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
-0: ConstructorDecl: Generating Code for constructor for class Main
+37: ClassDecl:	Generating code for class 'Assignment5'.
+39: MethodDecl:	Generating code for method 'fib'.
+40: LocalDecl:	Generating code for the initializer for variable 'F'.
+40: NewArray:	 Creating new array of type int[][]
+41: LocalDecl:	Generating code for the initializer for variable 'M'.
+41: NewArray:	 Creating new array of type int[][]
+43: ForStat:	Generating code.
+43: LocalDecl:	Generating code for the initializer for variable 'i'.
+43: Literal:	Generating code for Literal '0'.
+43: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+43: NameExpr:	Generating code for a local var/param (access) for 'i'.
+43: NameExpr:	Generating code for a local var/param (access) for 'n'.
+44: LocalDecl:	Generating code for the initializer for variable 'temp'.
+44: NewArray:	 Creating new array of type int[][]
+46: ExprStat:	Visiting an Expression Statement.
+46: Assignment:	Generating code for an Assignment.
+46: Generating reference for Array Access target
+46: Visiting ArrayAccessExpr
+46: Literal:	Generating code for Literal '0'.
+46: BinaryExpr:	Generating code for + :  int -> int -> int.
+46: BinaryExpr:	Generating code for * :  int -> int -> int.
+46: Visiting ArrayAccessExpr
+46: Visiting ArrayAccessExpr
+46: BinaryExpr:	Generating code for * :  int -> int -> int.
+46: Visiting ArrayAccessExpr
+46: Visiting ArrayAccessExpr
+47: ExprStat:	Visiting an Expression Statement.
+47: Assignment:	Generating code for an Assignment.
+47: Generating reference for Array Access target
+47: Visiting ArrayAccessExpr
+47: Literal:	Generating code for Literal '1'.
+47: BinaryExpr:	Generating code for + :  int -> int -> int.
+47: BinaryExpr:	Generating code for * :  int -> int -> int.
+47: Visiting ArrayAccessExpr
+47: Visiting ArrayAccessExpr
+47: BinaryExpr:	Generating code for * :  int -> int -> int.
+47: Visiting ArrayAccessExpr
+47: Visiting ArrayAccessExpr
+48: ExprStat:	Visiting an Expression Statement.
+48: Assignment:	Generating code for an Assignment.
+48: Generating reference for Array Access target
+48: Visiting ArrayAccessExpr
+48: Literal:	Generating code for Literal '0'.
+48: BinaryExpr:	Generating code for + :  int -> int -> int.
+48: BinaryExpr:	Generating code for * :  int -> int -> int.
+48: Visiting ArrayAccessExpr
+48: Visiting ArrayAccessExpr
+48: BinaryExpr:	Generating code for * :  int -> int -> int.
+48: Visiting ArrayAccessExpr
+48: Visiting ArrayAccessExpr
+49: ExprStat:	Visiting an Expression Statement.
+49: Assignment:	Generating code for an Assignment.
+49: Generating reference for Array Access target
+49: Visiting ArrayAccessExpr
+49: Literal:	Generating code for Literal '1'.
+49: BinaryExpr:	Generating code for + :  int -> int -> int.
+49: BinaryExpr:	Generating code for * :  int -> int -> int.
+49: Visiting ArrayAccessExpr
+49: Visiting ArrayAccessExpr
+49: BinaryExpr:	Generating code for * :  int -> int -> int.
+49: Visiting ArrayAccessExpr
+49: Visiting ArrayAccessExpr
+50: ExprStat:	Visiting an Expression Statement.
+50: Assignment:	Generating code for an Assignment.
+50: NameExpr:	Generating code for a local var/param (access) for 'temp'.
+43: ExprStat:	Visiting an Expression Statement.
+43: UnaryPostExpr:	Generating code.
+43: NameExpr:	Generating code for a local var/param (access) for 'i'.
+43: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+53: ReturnStat:	Generating code.
+53: Visiting ArrayAccessExpr
+56: MethodDecl:	Generating code for method 'sieve'.
+57: LocalDecl:	Generating code for the initializer for variable 'numbers'.
+57: NewArray:	 Creating new array of type int[]
+58: ForStat:	Generating code.
+58: LocalDecl:	Generating code for the initializer for variable 'i'.
+58: Literal:	Generating code for Literal '0'.
+58: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+58: NameExpr:	Generating code for a local var/param (access) for 'i'.
+58: NameExpr:	Generating code for a local var/param (access) for 'n'.
+59: ExprStat:	Visiting an Expression Statement.
+59: Assignment:	Generating code for an Assignment.
+59: Generating reference for Array Access target
+59: NameExpr:	Generating code for a local var/param (access) for 'numbers'.
+59: NameExpr:	Generating code for a local var/param (access) for 'i'.
+59: BinaryExpr:	Generating code for + :  int -> int -> int.
+59: NameExpr:	Generating code for a local var/param (access) for 'i'.
+59: Literal:	Generating code for Literal '1'.
+58: ExprStat:	Visiting an Expression Statement.
+58: UnaryPostExpr:	Generating code.
+58: NameExpr:	Generating code for a local var/param (access) for 'i'.
+58: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+60: ExprStat:	Visiting an Expression Statement.
+60: Assignment:	Generating code for an Assignment.
+60: Generating reference for Array Access target
+60: NameExpr:	Generating code for a local var/param (access) for 'numbers'.
+60: Literal:	Generating code for Literal '0'.
+60: Literal:	Generating code for Literal '0'.
+61: ForStat:	Generating code.
+61: LocalDecl:	Generating code for the initializer for variable 'i'.
+61: Literal:	Generating code for Literal '1'.
+61: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+61: NameExpr:	Generating code for a local var/param (access) for 'i'.
+61: NameExpr:	Generating code for a local var/param (access) for 'n'.
+62: IfStat:	Generating code.
+62: BinaryExpr:	Generating code for != :  int -> int -> boolean.
+62: Visiting ArrayAccessExpr
+62: Literal:	Generating code for Literal '0'.
+63: LocalDecl:	Generating code for the initializer for variable 'j'.
+63: BinaryExpr:	Generating code for * :  int -> int -> int.
+63: Visiting ArrayAccessExpr
+63: Literal:	Generating code for Literal '2'.
+64: While Stat:	Generating Code.
+64: BinaryExpr:	Generating code for <= :  int -> int -> boolean.
+64: NameExpr:	Generating code for a local var/param (access) for 'j'.
+64: NameExpr:	Generating code for a local var/param (access) for 'n'.
+65: ExprStat:	Visiting an Expression Statement.
+65: Assignment:	Generating code for an Assignment.
+65: Generating reference for Array Access target
+65: NameExpr:	Generating code for a local var/param (access) for 'numbers'.
+65: BinaryExpr:	Generating code for - :  int -> int -> int.
+65: NameExpr:	Generating code for a local var/param (access) for 'j'.
+65: Literal:	Generating code for Literal '1'.
+65: Literal:	Generating code for Literal '0'.
+66: ExprStat:	Visiting an Expression Statement.
+66: Assignment:	Generating code for an Assignment.
+66: BinaryExpr:	Generating code for + :  int -> int -> int.
+66: NameExpr:	Generating code for a local var/param (access) for 'j'.
+66: Visiting ArrayAccessExpr
+61: ExprStat:	Visiting an Expression Statement.
+61: UnaryPostExpr:	Generating code.
+61: NameExpr:	Generating code for a local var/param (access) for 'i'.
+61: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+70: LocalDecl:	Generating code for the initializer for variable 'count'.
+70: Literal:	Generating code for Literal '0'.
+71: ForStat:	Generating code.
+71: LocalDecl:	Generating code for the initializer for variable 'i'.
+71: Literal:	Generating code for Literal '0'.
+71: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+71: NameExpr:	Generating code for a local var/param (access) for 'i'.
+71: NameExpr:	Generating code for a local var/param (access) for 'n'.
+72: IfStat:	Generating code.
+72: BinaryExpr:	Generating code for != :  int -> int -> boolean.
+72: Visiting ArrayAccessExpr
+72: Literal:	Generating code for Literal '0'.
+73: ExprStat:	Visiting an Expression Statement.
+73: UnaryPostExpr:	Generating code.
+73: NameExpr:	Generating code for a local var/param (access) for 'count'.
+73: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+71: ExprStat:	Visiting an Expression Statement.
+71: UnaryPostExpr:	Generating code.
+71: NameExpr:	Generating code for a local var/param (access) for 'i'.
+71: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+74: LocalDecl:	Generating code for the initializer for variable 'primes'.
+74: NewArray:	 Creating new array of type int[]
+75: LocalDecl:	Generating code for the initializer for variable 'index'.
+75: Literal:	Generating code for Literal '0'.
+76: ForStat:	Generating code.
+76: LocalDecl:	Generating code for the initializer for variable 'i'.
+76: Literal:	Generating code for Literal '0'.
+76: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+76: NameExpr:	Generating code for a local var/param (access) for 'i'.
+76: NameExpr:	Generating code for a local var/param (access) for 'n'.
+77: IfStat:	Generating code.
+77: BinaryExpr:	Generating code for != :  int -> int -> boolean.
+77: Visiting ArrayAccessExpr
+77: Literal:	Generating code for Literal '0'.
+79: ExprStat:	Visiting an Expression Statement.
+79: Assignment:	Generating code for an Assignment.
+79: Generating reference for Array Access target
+79: NameExpr:	Generating code for a local var/param (access) for 'primes'.
+79: NameExpr:	Generating code for a local var/param (access) for 'index'.
+79: Visiting ArrayAccessExpr
+80: ExprStat:	Visiting an Expression Statement.
+80: UnaryPostExpr:	Generating code.
+80: NameExpr:	Generating code for a local var/param (access) for 'index'.
+80: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+76: ExprStat:	Visiting an Expression Statement.
+76: UnaryPostExpr:	Generating code.
+76: NameExpr:	Generating code for a local var/param (access) for 'i'.
+76: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+82: ReturnStat:	Generating code.
+82: NameExpr:	Generating code for a local var/param (access) for 'primes'.
+85: MethodDecl:	Generating code for method 'checkMatrixDim'.
+86: IfStat:	Generating code.
+86: BinaryExpr:	Generating code for != :  int -> int -> boolean.
+86: FieldRef:	Generating code (getfield code only!).
+86: NameExpr:	Generating code for a local var/param (access) for 'M'.
+86: NameExpr:	Generating code for a local var/param (access) for 'n'.
+87: ReturnStat:	Generating code.
+87: Literal:	Generating code for Literal 'false'.
+88: ForStat:	Generating code.
+88: LocalDecl:	Generating code for the initializer for variable 'i'.
+88: Literal:	Generating code for Literal '0'.
+88: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+88: NameExpr:	Generating code for a local var/param (access) for 'i'.
+88: NameExpr:	Generating code for a local var/param (access) for 'n'.
+89: IfStat:	Generating code.
+89: BinaryExpr:	Generating code for != :  int -> int -> boolean.
+89: FieldRef:	Generating code (getfield code only!).
+89: Visiting ArrayAccessExpr
+89: NameExpr:	Generating code for a local var/param (access) for 'n'.
+90: ReturnStat:	Generating code.
+90: Literal:	Generating code for Literal 'false'.
+88: ExprStat:	Visiting an Expression Statement.
+88: UnaryPostExpr:	Generating code.
+88: NameExpr:	Generating code for a local var/param (access) for 'i'.
+88: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+91: ReturnStat:	Generating code.
+91: Literal:	Generating code for Literal 'true'.
+94: MethodDecl:	Generating code for method 'rjustify'.
+95: LocalDecl:	Generating code for the initializer for variable 'result'.
+95: BinaryExpr:	Generating code for + :  String -> int -> String.
+95: Literal:	Generating code for Literal '""'.
+95: NameExpr:	Generating code for a local var/param (access) for 'val'.
+96: While Stat:	Generating Code.
+96: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+96: Invocation:	Generating code for invoking method 'length' in class 'String'.
+96: Invocation:	Generating code for the target.
+96: NameExpr:	Generating code for a local var/param (access) for 'result'.
+96: NameExpr:	Generating code for a local var/param (access) for 'n'.
+97: ExprStat:	Visiting an Expression Statement.
+97: Assignment:	Generating code for an Assignment.
+97: BinaryExpr:	Generating code for + :  String -> String -> String.
+97: Literal:	Generating code for Literal '" "'.
+97: NameExpr:	Generating code for a local var/param (access) for 'result'.
+98: ReturnStat:	Generating code.
+98: NameExpr:	Generating code for a local var/param (access) for 'result'.
+101: MethodDecl:	Generating code for method 'printMatrix'.
+102: IfStat:	Generating code.
+102: Invocation:	Generating code for invoking method 'checkMatrixDim' in class 'Assignment5'.
+102: Invocation:	Generating code for the target.
+102: NameExpr:	Generating code for a local var/param (access) for 'M'.
+102: NameExpr:	Generating code for a local var/param (access) for 'n'.
+103: LocalDecl:	Generating code for the initializer for variable 'max'.
+103: Literal:	Generating code for Literal '0'.
+104: LocalDecl:	Generating code for the initializer for variable 'min'.
+104: Literal:	Generating code for Literal '0'.
+105: ForStat:	Generating code.
+105: LocalDecl:	Generating code for the initializer for variable 'i'.
+105: Literal:	Generating code for Literal '0'.
+105: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+105: NameExpr:	Generating code for a local var/param (access) for 'i'.
+105: NameExpr:	Generating code for a local var/param (access) for 'n'.
+106: ForStat:	Generating code.
+106: LocalDecl:	Generating code for the initializer for variable 'j'.
+106: Literal:	Generating code for Literal '0'.
+106: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+106: NameExpr:	Generating code for a local var/param (access) for 'j'.
+106: NameExpr:	Generating code for a local var/param (access) for 'n'.
+107: IfStat:	Generating code.
+107: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+107: Visiting ArrayAccessExpr
+107: NameExpr:	Generating code for a local var/param (access) for 'min'.
+108: ExprStat:	Visiting an Expression Statement.
+108: Assignment:	Generating code for an Assignment.
+108: Visiting ArrayAccessExpr
+109: IfStat:	Generating code.
+109: BinaryExpr:	Generating code for > :  int -> int -> boolean.
+109: Visiting ArrayAccessExpr
+109: NameExpr:	Generating code for a local var/param (access) for 'max'.
+110: ExprStat:	Visiting an Expression Statement.
+110: Assignment:	Generating code for an Assignment.
+110: Visiting ArrayAccessExpr
+106: ExprStat:	Visiting an Expression Statement.
+106: UnaryPostExpr:	Generating code.
+106: NameExpr:	Generating code for a local var/param (access) for 'j'.
+106: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+105: ExprStat:	Visiting an Expression Statement.
+105: UnaryPostExpr:	Generating code.
+105: NameExpr:	Generating code for a local var/param (access) for 'i'.
+105: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+112: LocalDecl:	Generating code for the initializer for variable 'l1'.
+112: Invocation:	Generating code for invoking method 'length' in class 'String'.
+112: Invocation:	Generating code for the target.
+112: BinaryExpr:	Generating code for + :  String -> int -> String.
+112: Literal:	Generating code for Literal '""'.
+112: NameExpr:	Generating code for a local var/param (access) for 'min'.
+113: LocalDecl:	Generating code for the initializer for variable 'l2'.
+113: Invocation:	Generating code for invoking method 'length' in class 'String'.
+113: Invocation:	Generating code for the target.
+113: BinaryExpr:	Generating code for + :  String -> int -> String.
+113: Literal:	Generating code for Literal '""'.
+113: NameExpr:	Generating code for a local var/param (access) for 'max'.
+114: LocalDecl:	Generating code for the initializer for variable 'just'.
+114: BinaryExpr:	Generating code for + :  int -> int -> int.
+114: Ternary:	Generating code.
+114: BinaryExpr:	Generating code for > :  int -> int -> boolean.
+114: NameExpr:	Generating code for a local var/param (access) for 'l1'.
+114: NameExpr:	Generating code for a local var/param (access) for 'l2'.
+114: NameExpr:	Generating code for a local var/param (access) for 'l1'.
+114: NameExpr:	Generating code for a local var/param (access) for 'l2'.
+114: Literal:	Generating code for Literal '1'.
+116: ForStat:	Generating code.
+116: LocalDecl:	Generating code for the initializer for variable 'i'.
+116: Literal:	Generating code for Literal '0'.
+116: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+116: NameExpr:	Generating code for a local var/param (access) for 'i'.
+116: NameExpr:	Generating code for a local var/param (access) for 'n'.
+117: ExprStat:	Visiting an Expression Statement.
+117: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+117: Invocation:	Generating code for the target.
+117: FieldRef:	Generating code (getfield code only!).
+117: NameExpr:	Was a class name - skip it :System
+117: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+117: Literal:	Generating code for Literal '"|"'.
+117: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+118: ForStat:	Generating code.
+118: LocalDecl:	Generating code for the initializer for variable 'j'.
+118: Literal:	Generating code for Literal '0'.
+118: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+118: NameExpr:	Generating code for a local var/param (access) for 'j'.
+118: NameExpr:	Generating code for a local var/param (access) for 'n'.
+119: ExprStat:	Visiting an Expression Statement.
+119: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+119: Invocation:	Generating code for the target.
+119: FieldRef:	Generating code (getfield code only!).
+119: NameExpr:	Was a class name - skip it :System
+119: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+119: Invocation:	Generating code for invoking method 'rjustify' in class 'Assignment5'.
+119: Invocation:	Generating code for the target.
+119: Visiting ArrayAccessExpr
+119: NameExpr:	Generating code for a local var/param (access) for 'just'.
+119: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+118: ExprStat:	Visiting an Expression Statement.
+118: UnaryPostExpr:	Generating code.
+118: NameExpr:	Generating code for a local var/param (access) for 'j'.
+118: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+120: ExprStat:	Visiting an Expression Statement.
+120: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+120: Invocation:	Generating code for the target.
+120: FieldRef:	Generating code (getfield code only!).
+120: NameExpr:	Was a class name - skip it :System
+120: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+120: Literal:	Generating code for Literal '" |"'.
+120: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+116: ExprStat:	Visiting an Expression Statement.
+116: UnaryPostExpr:	Generating code.
+116: NameExpr:	Generating code for a local var/param (access) for 'i'.
+116: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+125: MethodDecl:	Generating code for method 'matrixMult'.
+126: IfStat:	Generating code.
+126: BinaryExpr:	Generating code for || :  boolean -> boolean -> boolean.
+126: UnaryPreExpr:	Generating code for ! : boolean -> boolean.
+126: Invocation:	Generating code for invoking method 'checkMatrixDim' in class 'Assignment5'.
+126: Invocation:	Generating code for the target.
+126: NameExpr:	Generating code for a local var/param (access) for 'A'.
+126: NameExpr:	Generating code for a local var/param (access) for 'n'.
+126: UnaryPreExpr:	Generating code for ! : boolean -> boolean.
+126: Invocation:	Generating code for invoking method 'checkMatrixDim' in class 'Assignment5'.
+126: Invocation:	Generating code for the target.
+126: NameExpr:	Generating code for a local var/param (access) for 'B'.
+126: NameExpr:	Generating code for a local var/param (access) for 'n'.
+127: ReturnStat:	Generating code.
+127: Literal:	Generating code for Literal 'null'.
+129: LocalDecl:	Generating code for the initializer for variable 'C'.
+129: NewArray:	 Creating new array of type int[][]
+130: ForStat:	Generating code.
+130: LocalDecl:	Generating code for the initializer for variable 'i'.
+130: Literal:	Generating code for Literal '0'.
+130: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+130: NameExpr:	Generating code for a local var/param (access) for 'i'.
+130: NameExpr:	Generating code for a local var/param (access) for 'n'.
+131: ForStat:	Generating code.
+131: LocalDecl:	Generating code for the initializer for variable 'j'.
+131: Literal:	Generating code for Literal '0'.
+131: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+131: NameExpr:	Generating code for a local var/param (access) for 'j'.
+131: NameExpr:	Generating code for a local var/param (access) for 'n'.
+132: ExprStat:	Visiting an Expression Statement.
+132: Assignment:	Generating code for an Assignment.
+132: Generating reference for Array Access target
+132: Visiting ArrayAccessExpr
+132: NameExpr:	Generating code for a local var/param (access) for 'j'.
+132: Literal:	Generating code for Literal '0'.
+131: ExprStat:	Visiting an Expression Statement.
+131: UnaryPostExpr:	Generating code.
+131: NameExpr:	Generating code for a local var/param (access) for 'j'.
+131: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+130: ExprStat:	Visiting an Expression Statement.
+130: UnaryPostExpr:	Generating code.
+130: NameExpr:	Generating code for a local var/param (access) for 'i'.
+130: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+133: ForStat:	Generating code.
+133: LocalDecl:	Generating code for the initializer for variable 'i'.
+133: Literal:	Generating code for Literal '0'.
+133: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+133: NameExpr:	Generating code for a local var/param (access) for 'i'.
+133: NameExpr:	Generating code for a local var/param (access) for 'n'.
+134: ForStat:	Generating code.
+134: LocalDecl:	Generating code for the initializer for variable 'j'.
+134: Literal:	Generating code for Literal '0'.
+134: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+134: NameExpr:	Generating code for a local var/param (access) for 'j'.
+134: NameExpr:	Generating code for a local var/param (access) for 'n'.
+135: ForStat:	Generating code.
+135: LocalDecl:	Generating code for the initializer for variable 'k'.
+135: Literal:	Generating code for Literal '0'.
+135: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+135: NameExpr:	Generating code for a local var/param (access) for 'k'.
+135: NameExpr:	Generating code for a local var/param (access) for 'n'.
+136: ExprStat:	Visiting an Expression Statement.
+136: Assignment:	Generating code for an Assignment.
+136: Generating reference for Array Access target
+136: Visiting ArrayAccessExpr
+136: NameExpr:	Generating code for a local var/param (access) for 'j'.
+136: Duplicating reference and getting value for LHS (ArrayAccessRef/<op>=)
+136: BinaryExpr:	Generating code for * :  int -> int -> int.
+136: Visiting ArrayAccessExpr
+136: Visiting ArrayAccessExpr
+135: ExprStat:	Visiting an Expression Statement.
+135: UnaryPostExpr:	Generating code.
+135: NameExpr:	Generating code for a local var/param (access) for 'k'.
+135: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+134: ExprStat:	Visiting an Expression Statement.
+134: UnaryPostExpr:	Generating code.
+134: NameExpr:	Generating code for a local var/param (access) for 'j'.
+134: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+133: ExprStat:	Visiting an Expression Statement.
+133: UnaryPostExpr:	Generating code.
+133: NameExpr:	Generating code for a local var/param (access) for 'i'.
+133: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+137: ReturnStat:	Generating code.
+137: NameExpr:	Generating code for a local var/param (access) for 'C'.
+141: MethodDecl:	Generating code for method 'main'.
+143: ForStat:	Generating code.
+143: LocalDecl:	Generating code for the initializer for variable 'i'.
+143: Literal:	Generating code for Literal '0'.
+143: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+143: NameExpr:	Generating code for a local var/param (access) for 'i'.
+143: Literal:	Generating code for Literal '15'.
+144: ExprStat:	Visiting an Expression Statement.
+144: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+144: Invocation:	Generating code for the target.
+144: FieldRef:	Generating code (getfield code only!).
+144: NameExpr:	Was a class name - skip it :System
+144: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+144: BinaryExpr:	Generating code for + :  String -> int -> String.
+144: BinaryExpr:	Generating code for + :  String -> String -> String.
+144: BinaryExpr:	Generating code for + :  String -> int -> String.
+144: Literal:	Generating code for Literal '"fib("'.
+144: NameExpr:	Generating code for a local var/param (access) for 'i'.
+144: Literal:	Generating code for Literal '") = "'.
+144: Invocation:	Generating code for invoking method 'fib' in class 'Assignment5'.
+144: Invocation:	Generating code for the target.
+144: NameExpr:	Generating code for a local var/param (access) for 'i'.
+144: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+143: ExprStat:	Visiting an Expression Statement.
+143: UnaryPostExpr:	Generating code.
+143: NameExpr:	Generating code for a local var/param (access) for 'i'.
+143: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+147: LocalDecl:	Generating code for the initializer for variable 'primes'.
+147: Invocation:	Generating code for invoking method 'sieve' in class 'Assignment5'.
+147: Invocation:	Generating code for the target.
+147: Literal:	Generating code for Literal '100'.
+148: ExprStat:	Visiting an Expression Statement.
+148: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+148: Invocation:	Generating code for the target.
+148: FieldRef:	Generating code (getfield code only!).
+148: NameExpr:	Was a class name - skip it :System
+148: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+148: BinaryExpr:	Generating code for + :  String -> String -> String.
+148: BinaryExpr:	Generating code for + :  String -> int -> String.
+148: Literal:	Generating code for Literal '"There are "'.
+148: FieldRef:	Generating code (getfield code only!).
+148: NameExpr:	Generating code for a local var/param (access) for 'primes'.
+149: Literal:	Generating code for Literal '" primes less than 100 and they are {"'.
+148: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+150: ForStat:	Generating code.
+150: LocalDecl:	Generating code for the initializer for variable 'i'.
+150: Literal:	Generating code for Literal '0'.
+150: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+150: NameExpr:	Generating code for a local var/param (access) for 'i'.
+150: FieldRef:	Generating code (getfield code only!).
+150: NameExpr:	Generating code for a local var/param (access) for 'primes'.
+151: ExprStat:	Visiting an Expression Statement.
+151: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+151: Invocation:	Generating code for the target.
+151: FieldRef:	Generating code (getfield code only!).
+151: NameExpr:	Was a class name - skip it :System
+151: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+151: Visiting ArrayAccessExpr
+151: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+152: IfStat:	Generating code.
+152: BinaryExpr:	Generating code for < :  int -> int -> boolean.
+152: NameExpr:	Generating code for a local var/param (access) for 'i'.
+152: BinaryExpr:	Generating code for - :  int -> int -> int.
+152: FieldRef:	Generating code (getfield code only!).
+152: NameExpr:	Generating code for a local var/param (access) for 'primes'.
+152: Literal:	Generating code for Literal '1'.
+153: ExprStat:	Visiting an Expression Statement.
+153: Invocation:	Generating code for invoking method 'print' in class 'Io'.
+153: Invocation:	Generating code for the target.
+153: FieldRef:	Generating code (getfield code only!).
+153: NameExpr:	Was a class name - skip it :System
+153: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+153: Literal:	Generating code for Literal '", "'.
+153: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+150: ExprStat:	Visiting an Expression Statement.
+150: UnaryPostExpr:	Generating code.
+150: NameExpr:	Generating code for a local var/param (access) for 'i'.
+150: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+155: ExprStat:	Visiting an Expression Statement.
+155: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+155: Invocation:	Generating code for the target.
+155: FieldRef:	Generating code (getfield code only!).
+155: NameExpr:	Was a class name - skip it :System
+155: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+155: Literal:	Generating code for Literal '"}"'.
+155: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+157: ExprStat:	Visiting an Expression Statement.
+157: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+157: Invocation:	Generating code for the target.
+157: FieldRef:	Generating code (getfield code only!).
+157: NameExpr:	Was a class name - skip it :System
+157: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+157: Invocation:	Generating code for invoking method 'checkMatrixDim' in class 'Assignment5'.
+157: Invocation:	Generating code for the target.
+157: NewArray:	 Creating new array of type int[][]
+160: Literal:	Generating code for Literal '5'.
+157: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+162: ExprStat:	Visiting an Expression Statement.
+162: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+162: Invocation:	Generating code for the target.
+162: FieldRef:	Generating code (getfield code only!).
+162: NameExpr:	Was a class name - skip it :System
+162: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+163: BinaryExpr:	Generating code for + :  String -> String -> String.
+163: BinaryExpr:	Generating code for + :  String -> String -> String.
+163: Literal:	Generating code for Literal '"Here is 123 right justified 7: '"'.
+163: Invocation:	Generating code for invoking method 'rjustify' in class 'Assignment5'.
+163: Invocation:	Generating code for the target.
+163: Literal:	Generating code for Literal '123'.
+163: Literal:	Generating code for Literal '4'.
+163: Literal:	Generating code for Literal '"'"'.
+162: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+165: ExprStat:	Visiting an Expression Statement.
+165: Invocation:	Generating code for invoking method 'printMatrix' in class 'Assignment5'.
+165: Invocation:	Generating code for the target.
+165: NewArray:	 Creating new array of type int[][]
+167: Literal:	Generating code for Literal '5'.
+165: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+169: LocalDecl:	Visiting local variable declaration for variable 'A'.
+169: LocalDecl:	Visiting local variable declaration for variable 'B'.
+169: LocalDecl:	Visiting local variable declaration for variable 'C'.
+170: ExprStat:	Visiting an Expression Statement.
+170: Assignment:	Generating code for an Assignment.
+170: NewArray:	 Creating new array of type int[][]
+171: ExprStat:	Visiting an Expression Statement.
+171: Assignment:	Generating code for an Assignment.
+171: NewArray:	 Creating new array of type int[][]
+172: ExprStat:	Visiting an Expression Statement.
+172: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+172: Invocation:	Generating code for the target.
+172: FieldRef:	Generating code (getfield code only!).
+172: NameExpr:	Was a class name - skip it :System
+172: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+172: Literal:	Generating code for Literal '"F:"'.
+172: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+173: ExprStat:	Visiting an Expression Statement.
+173: Invocation:	Generating code for invoking method 'printMatrix' in class 'Assignment5'.
+173: Invocation:	Generating code for the target.
+173: NameExpr:	Generating code for a local var/param (access) for 'C'.
+173: Literal:	Generating code for Literal '2'.
+173: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+174: ForStat:	Generating code.
+174: LocalDecl:	Generating code for the initializer for variable 'i'.
+174: Literal:	Generating code for Literal '1'.
+174: BinaryExpr:	Generating code for <= :  int -> int -> boolean.
+174: NameExpr:	Generating code for a local var/param (access) for 'i'.
+174: Literal:	Generating code for Literal '25'.
+175: ExprStat:	Visiting an Expression Statement.
+175: Assignment:	Generating code for an Assignment.
+175: Invocation:	Generating code for invoking method 'matrixMult' in class 'Assignment5'.
+175: Invocation:	Generating code for the target.
+175: NameExpr:	Generating code for a local var/param (access) for 'C'.
+175: NameExpr:	Generating code for a local var/param (access) for 'A'.
+175: Literal:	Generating code for Literal '2'.
+174: ExprStat:	Visiting an Expression Statement.
+174: UnaryPostExpr:	Generating code.
+174: NameExpr:	Generating code for a local var/param (access) for 'i'.
+174: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+177: ExprStat:	Visiting an Expression Statement.
+177: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+177: Invocation:	Generating code for the target.
+177: FieldRef:	Generating code (getfield code only!).
+177: NameExpr:	Was a class name - skip it :System
+177: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+177: Literal:	Generating code for Literal '"F^25:"'.
+177: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+178: ExprStat:	Visiting an Expression Statement.
+178: Invocation:	Generating code for invoking method 'printMatrix' in class 'Assignment5'.
+178: Invocation:	Generating code for the target.
+178: NameExpr:	Generating code for a local var/param (access) for 'C'.
+178: Literal:	Generating code for Literal '2'.
+178: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+179: ExprStat:	Visiting an Expression Statement.
+179: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+179: Invocation:	Generating code for the target.
+179: FieldRef:	Generating code (getfield code only!).
+179: NameExpr:	Was a class name - skip it :System
+179: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+179: BinaryExpr:	Generating code for + :  String -> int -> String.
+179: Literal:	Generating code for Literal '"Fib(25) = "'.
+179: Visiting ArrayAccessExpr
+179: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+181: ExprStat:	Visiting an Expression Statement.
+181: Invocation:	Generating code for invoking method 'printMatrix' in class 'Assignment5'.
+181: Invocation:	Generating code for the target.
+181: Invocation:	Generating code for invoking method 'matrixMult' in class 'Assignment5'.
+181: Invocation:	Generating code for the target.
+181: NewArray:	 Creating new array of type int[][]
+182: NewArray:	 Creating new array of type int[][]
+182: Literal:	Generating code for Literal '2'.
+182: Literal:	Generating code for Literal '2'.
+181: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+0: ConstructorDecl: Generating Code for constructor for class Assignment5
 0: CInvocation:	Generating code for Explicit Constructor Invocation.
 Not generating code for 'System'
 Not generating code for 'Io'
 Not generating code for 'java/lang/Object'
 ---------------------------------------------------------
-Writing Unoptimized jasmin file : 'Main.j'
+Writing Unoptimized jasmin file : 'Assignment5.j'
 Generating code for the EVM? false
 ============= S = U = C = C = E = S = S =================
