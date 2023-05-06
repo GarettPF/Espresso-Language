@@ -1,0 +1,68 @@
+Creating parser for Include/System.java
+Creating parser for Include/Io.java
+---------------------------------------------------------
+Generating code for: Main
+
+** Assigning Addresses:
+7: MethodDecl:	Resetting address counter for method 'main'.
+7: ParamDecl:	Assigning address:  0 to parameter 'args'.
+8: LocalDecl:	Assigning address:  1 to local variable 'a'.
+8: LocalDecl:	Assigning address:  2 to local variable 'b'.
+8: LocalDecl:	Assigning address:  3 to local variable 'c'.
+7: End MethodDecl
+0: ConstructorDecl:	Resetting address counter for constructor 'Main'.
+0: End ConstructorDecl
+
+** Generating Bytecode Instructions:
+6: ClassDecl:	Generating code for class 'Main'.
+7: MethodDecl:	Generating code for method 'main'.
+8: LocalDecl:	Visiting local variable declaration for variable 'a'.
+8: LocalDecl:	Visiting local variable declaration for variable 'b'.
+8: LocalDecl:	Visiting local variable declaration for variable 'c'.
+9: ExprStat:	Visiting an Expression Statement.
+9: Assignment:	Generating code for an Assignment.
+9: Literal:	Generating code for Literal '10'.
+10: ExprStat:	Visiting an Expression Statement.
+10: Assignment:	Generating code for an Assignment.
+10: Literal:	Generating code for Literal '0'.
+11: ExprStat:	Visiting an Expression Statement.
+11: Assignment:	Generating code for an Assignment.
+11: Literal:	Generating code for Literal '0'.
+12: While Stat:	Generating Code.
+12: BinaryExpr:	Generating code for > :  int -> int -> boolean.
+12: NameExpr:	Generating code for a local var/param (access) for 'a'.
+12: Literal:	Generating code for Literal '0'.
+13: ExprStat:	Visiting an Expression Statement.
+13: Assignment:	Generating code for an Assignment.
+13: BinaryExpr:	Generating code for + :  int -> int -> int.
+13: NameExpr:	Generating code for a local var/param (access) for 'b'.
+13: NameExpr:	Generating code for a local var/param (access) for 'a'.
+14: ExprStat:	Visiting an Expression Statement.
+14: UnaryPostExpr:	Generating code.
+14: NameExpr:	Generating code for a local var/param (access) for 'c'.
+14: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+15: ExprStat:	Visiting an Expression Statement.
+15: UnaryPostExpr:	Generating code.
+15: NameExpr:	Generating code for a local var/param (access) for 'a'.
+15: ExprStat:	POP added to remove unused value left on stack for a 'AST.UnaryPostExpr'.
+17: ExprStat:	Visiting an Expression Statement.
+17: Invocation:	Generating code for invoking method 'println' in class 'Io'.
+17: Invocation:	Generating code for the target.
+17: FieldRef:	Generating code (getfield code only!).
+17: NameExpr:	Was a class name - skip it :System
+17: Invocation:	Issuing a POP instruction to remove target reference; not needed for static invocation.
+17: BinaryExpr:	Generating code for + :  int -> int -> int.
+17: BinaryExpr:	Generating code for + :  int -> int -> int.
+17: NameExpr:	Generating code for a local var/param (access) for 'a'.
+17: NameExpr:	Generating code for a local var/param (access) for 'b'.
+17: NameExpr:	Generating code for a local var/param (access) for 'c'.
+17: ExprStat:	Invocation of Void method where return value is not used anyways (no POP needed).
+0: ConstructorDecl: Generating Code for constructor for class Main
+0: CInvocation:	Generating code for Explicit Constructor Invocation.
+Not generating code for 'System'
+Not generating code for 'Io'
+Not generating code for 'java/lang/Object'
+---------------------------------------------------------
+Writing Unoptimized jasmin file : 'Main.j'
+Generating code for the EVM? false
+============= S = U = C = C = E = S = S =================
