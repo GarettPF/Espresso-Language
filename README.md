@@ -1,6 +1,6 @@
 # Espresso-Language
 
-![Espresso-Language](https://github.com/GarettPF/Espresso-Language/blob/main/espresso.png)
+![Espresso-Language](https://cdn-icons-png.flaticon.com/512/5228/5228061.png)
 
 Espresso-Language is a programming language designed for creating and running expressive and efficient code. This repository contains the source code and documentation for the Espresso-Language project.
 
