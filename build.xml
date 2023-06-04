@@ -10,6 +10,7 @@
   <property name="cupJar" location="src/Utilities/java_cup.jar"/>
   <property name="jflexJar" location="src/Utilities/JFlex.jar"/>
   <property name="classpath" value="${cupJar}:."/>
+  <property name="file" value="EspressoPegs.java"/>
   <description>
     Build File for Espresso Compiler Project
   </description>
@@ -63,6 +64,13 @@
   
   <target name="run">
     <java classpath="${classpath}:${build}" classname="Espressoc"> 
+      <arg value="-P:6"/>
+      <arg value="${file}"/>
+    </java>
+  </target>
+
+  <target name="example">
+    <java classpath="${classpath}:${build}" classname="Espressoc">
       <arg value="-P:6"/>
       <arg value="${file}"/>
     </java>
