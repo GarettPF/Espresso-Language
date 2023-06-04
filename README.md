@@ -14,6 +14,14 @@ Espresso-Language is a programming language designed for creating and running ex
 
 - **Extensible**: The language is designed to be easily extensible, allowing developers to create their own libraries and modules to enhance the functionality of Espresso-Language.
 
+## Prerequisites
+To use Espresso-Language, you need to have the following software installed:
+
+- Java Development Kit (JDK) 8 or above
+- Git
+- Bash (Command-line shell) or UNIX shell
+- Jasmin Assembler. [Install Guide](https://jasmin.sourceforge.net/)
+
 ## Installation
 
 To use Espresso-Language, you'll need to follow these steps:
@@ -25,33 +33,62 @@ To use Espresso-Language, you'll need to follow these steps:
 
 2. Make sure you have a compatible version of the Java Development Kit (JDK) installed on your machine.
 
-3. Build the project using your preferred Java build tool (e.g., Maven, Gradle). Alternatively, you can import the project into an Integrated Development Environment (IDE) that supports Java projects.
+3. Build the project using ```ant``` to invoke the build file.
 
 4. Once the project is built successfully, you can run Espresso-Language code using the provided execution script or by invoking the necessary classes manually.
 
 ## Usage
 
-To run Espresso-Language code, you have two options:
+To run Espresso-Language code:
 
 1. Using the provided execution script:
    ```
-   ./espresso <filename>
+   ./espressoc <filename>.java
    ```
 
    Replace `<filename>` with the path to your Espresso-Language source file.
+   This should have created the Jasmin assembly code files `<filename>.j`.
+   There are multiple testing code to use located in the Tests Folder with each version of the espresso language
 
-2. Invoking the necessary classes manually:
+2. Invoking the necessary Jasmin assembly files manually:
    ```
-   java -jar espresso.jar <filename>
+   jasmin <filename>.j
+   ```
+   or
+   ```
+   jasmin *.j
    ```
 
    Replace `<filename>` with the path to your Espresso-Language source file.
+   There should now be Java Byte Code that was generated.
+   
+3. Run the Java byte code using the espresso script
+   ```
+    ./espresso <filename>
+   ```
+   
+   Replace `<filename` with the entry class or the class containing the main function.
+   Using your JVM instead of the `espresso` script might cause importing errors as espresso's import is less technical than Java's import system. The `espresso` script should solve those import issues.
+  
+## Example Code
 
-## Documentation
+There is an example code that simulates the Tower of Hanoi disc puzzle.
 
-For detailed information on how to write code in Espresso-Language, refer to the [Espresso-Language Documentation](https://github.com/GarettPF/Espresso-Language/wiki).
+To run the example:
+```
+ant example
+```
 
-The documentation covers the language syntax, available features, standard library, and provides examples to help you get started.
+This produces the Jasmin Assembly files. Create the Java byte code using.
+```
+jasmin *.j
+```
+
+Now run the Espresso program.
+```
+./espresso Pegs
+```
+
 
 ## Contributing
 
@@ -72,4 +109,4 @@ Espresso-Language is released under the [MIT License](https://github.com/GarettP
 
 If you have any questions or feedback regarding Espresso-Language, feel free to reach out to the project maintainer:
 
-GarettPF - [email protected]
+GarettPF - garettpfolster677@gmail.com
